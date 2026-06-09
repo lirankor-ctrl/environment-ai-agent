@@ -1,0 +1,28 @@
+{
+  "name": "israel-recycling-weekly-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Weekly Hebrew AI report on recycling, waste, environmental regulation and circular economy in Israel",
+  "type": "module",
+  "scripts": {
+    "scan": "tsx src/scan.ts",
+    "report": "tsx src/generateReport.ts",
+    "email-report": "tsx src/sendEmail.ts",
+    "all": "npm run scan && npm run report && npm run email-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.15",
+    "openai": "^4.67.3",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@types/nodemailer": "^6.4.16",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}

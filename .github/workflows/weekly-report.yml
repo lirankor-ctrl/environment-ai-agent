@@ -1,0 +1,68 @@
+name: Weekly Recycling Report (Israel)
+
+on:
+  schedule:
+    # Sunday 04:00 UTC ≈ 06:00/07:00 Israel time (handles winter/summer DST).
+    - cron: '0 4 * * 0'
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: 'Send the email for real? (true/false)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write # allow committing the updated data/seen.json
+
+jobs:
+  weekly-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Scan sources
+        run: npm run scan
+
+      - name: Generate Hebrew report
+        run: npm run report
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          WAQI_TOKEN: ${{ secrets.WAQI_TOKEN }}
+
+      - name: Send email
+        run: npm run email-report
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          # Scheduled runs send for real; manual runs use the input (default false).
+          SEND_EMAIL: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.send_email }}
+
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-report
+          path: reports/
+          if-no-files-found: ignore
+
+      - name: Persist seen URLs (dedupe history)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/seen.json
+          git commit -m "chore: update seen URLs [skip ci]" || echo "No changes to commit"
+          git push || echo "Nothing to push"
