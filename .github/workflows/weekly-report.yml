@@ -9,7 +9,7 @@ on:
       send_email:
         description: 'Send the email for real? (true/false)'
         required: false
-        default: 'false'
+        default: 'true'
 
 permissions:
   contents: write # allow committing the updated data/seen.json
@@ -49,7 +49,9 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          # Scheduled runs send for real; manual runs use the input (default false).
+          # Scheduled runs send for real; manual runs use the input (default true).
+          # If the user manually enters "false", the value passes through and the
+          # code (which sends only when SEND_EMAIL == "true") will NOT send.
           SEND_EMAIL: ${{ github.event_name == 'schedule' && 'true' || github.event.inputs.send_email }}
 
       - name: Upload report artifacts
@@ -59,10 +61,12 @@ jobs:
           path: reports/
           if-no-files-found: ignore
 
-      - name: Persist seen URLs (dedupe history)
+      - name: Persist rolling cache + dedupe history
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/seen.json
-          git commit -m "chore: update seen URLs [skip ci]" || echo "No changes to commit"
+          # Persist the rolling 7-day report cache, scan metadata and seen history
+          # so next week's run merges with this week's items (and never empties).
+          git add data/latest-items.json data/scan-meta.json data/seen.json
+          git commit -m "chore: update weekly cache [skip ci]" || echo "No changes to commit"
           git push || echo "Nothing to push"
