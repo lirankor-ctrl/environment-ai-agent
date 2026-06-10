@@ -6,7 +6,15 @@ import { assessRelevance } from './relevance.js';
 import { SOURCES, type Source } from './sources/index.js';
 import { decodeGoogleNewsUrl, isGoogleNewsUrl } from './sources/googleNews.js';
 import { enrichWithDate, fetchArticleImage, isIgnoredUrl, mapLimit } from './sources/http.js';
-import { loadSeen, normalizeTitle, saveLatestItems, saveSeen, type Seen } from './storage.js';
+import {
+  loadLatestItems,
+  loadSeen,
+  normalizeTitle,
+  saveLatestItems,
+  saveScanMeta,
+  saveSeen,
+  type Seen,
+} from './storage.js';
 import type { ClassifiedItem, RawItem } from './types.js';
 
 const ENRICH_CONCURRENCY = 5;
@@ -122,13 +130,23 @@ async function main(): Promise<void> {
   // Sort by importance then by detail (longer title+summary = more detailed),
   // then collapse near-duplicate stories (same event from several outlets).
   const ranked = allItems.sort((a, b) => rank(b) - rank(a) || detail(b) - detail(a));
-  const classified = nearDedupe(ranked);
-  const nearDupsRemoved = ranked.length - classified.length;
+  const freshNew = nearDedupe(ranked);
+  const nearDupsRemoved = ranked.length - freshNew.length;
+
+  // ---- Rolling 7-day report cache ----
+  // Merge this run's new items with the previously cached items (pruned to the
+  // freshness window). The report always shows the best of the last 7 days and
+  // is never emptied just because a run found nothing new.
+  const prior = pruneByAge(await loadLatestItems(), config.freshnessDays);
+  const priorUrls = new Set(prior.map((i) => i.url));
+  const merged = mergeRolling(prior, freshNew, config.freshnessDays);
+  const newCount = merged.filter((i) => !priorUrls.has(i.url)).length;
+  const usedFallback = newCount === 0 && merged.length > 0;
 
   // Resolve Google News redirect links to real publisher URLs (better links +
   // enables article-specific images). Failures keep the original redirect.
   let resolved = 0;
-  await mapLimit(classified, ENRICH_CONCURRENCY, async (i) => {
+  await mapLimit(merged, ENRICH_CONCURRENCY, async (i) => {
     if (!isGoogleNewsUrl(i.url)) return null;
     const real = await decodeGoogleNewsUrl(i.url);
     if (real) {
@@ -140,23 +158,27 @@ async function main(): Promise<void> {
   log.info(`Resolved ${resolved} Google News links to source URLs.`);
 
   // Image enrichment for the items shown as visual cards (hero + top stories).
-  // Skip any link still on news.google.com (its og:image is a generic logo).
+  // Skip items that already have an image (cached) or are still on news.google.com.
   const IMAGE_COUNT = 6;
-  const visual = classified.slice(0, IMAGE_COUNT);
+  const visual = merged.slice(0, IMAGE_COUNT);
   const imgResults = await mapLimit(visual, ENRICH_CONCURRENCY, (i) =>
-    isGoogleNewsUrl(i.url) ? Promise.resolve(null) : fetchArticleImage(i.url),
+    i.imageUrl || isGoogleNewsUrl(i.url) ? Promise.resolve(null) : fetchArticleImage(i.url),
   );
-  const imgSrc = { 'og:image': 0, 'twitter:image': 0, 'article-img': 0 };
-  let withImage = 0;
   visual.forEach((it, idx) => {
     const r = imgResults[idx];
     if (r) {
       it.imageUrl = r.url;
       it.imageSource = r.source;
-      withImage++;
-      imgSrc[r.source]++;
     }
   });
+  const imgSrc = { 'og:image': 0, 'twitter:image': 0, 'article-img': 0 };
+  let withImage = 0;
+  for (const it of visual) {
+    if (it.imageUrl) {
+      withImage++;
+      if (it.imageSource) imgSrc[it.imageSource]++;
+    }
+  }
 
   // ---- Per-source logging ----
   log.step('SCAN — results per source');
@@ -199,16 +221,25 @@ async function main(): Promise<void> {
   log.info(`Rejected events/tours:      ${t.rejectedEvents}`);
   log.info(`Rejected non-Israeli:       ${t.rejectedForeign}`);
   log.info(`Rejected too old/undated:   ${t.rejectedOld}`);
-  log.info(`Included fresh articles:    ${classified.length}`);
+  log.info(`New relevant articles:      ${freshNew.length}`);
 
-  if (classified.length) {
-    log.info('— included articles:');
-    for (const i of classified) {
+  // ---- Rolling cache / fallback ----
+  log.step('SCAN — report cache (rolling 7 days)');
+  log.info(`New items found this run:    ${newCount}`);
+  log.info(`Cached items reused (≤7d):   ${merged.length - newCount}`);
+  log.info(`Total items in report:       ${merged.length}`);
+  if (usedFallback) {
+    log.warn('No new items this run — the weekly report will reuse the cached 7-day items (fallback).');
+  }
+
+  if (merged.length) {
+    log.info('— items in report:');
+    for (const i of merged.slice(0, 20)) {
       log.info(`    [${i.importance}] [${fmt(i.publishedAt)}] ${i.title} — ${i.source}`);
     }
   }
-  if (classified.length < 5) {
-    log.warn(`Only ${classified.length} relevant fresh items this week (target is 5–15).`);
+  if (merged.length < 5) {
+    log.warn(`Only ${merged.length} relevant fresh items available (target is 5–15).`);
   }
 
   log.step('SCAN — images (top stories)');
@@ -218,9 +249,10 @@ async function main(): Promise<void> {
     `Image source — og:image: ${imgSrc['og:image']} · twitter:image: ${imgSrc['twitter:image']} · article-img: ${imgSrc['article-img']}`,
   );
 
-  await saveLatestItems(classified);
+  await saveLatestItems(merged);
+  await saveScanMeta({ newItems: newCount, totalItems: merged.length, usedFallback });
   await saveSeen(seen);
-  log.info(`Saved ${classified.length} fresh items to data/latest-items.json`);
+  log.info(`Saved ${merged.length} items to data/latest-items.json (rolling 7-day cache).`);
   log.step('SCAN — done');
 }
 
@@ -274,6 +306,46 @@ function nearDedupe(items: ClassifiedItem[]): ClassifiedItem[] {
 
 function detail(i: ClassifiedItem): number {
   return (i.title + (i.summary ?? '')).length;
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+const CACHE_CAP = 40;
+
+/** Keep only items published within the freshness window (drops undated/old). */
+function pruneByAge(items: ClassifiedItem[], days: number): ClassifiedItem[] {
+  const now = Date.now();
+  const maxAge = days * DAY_MS;
+  return items.filter((i) => {
+    if (!i.publishedAt) return false;
+    const ts = Date.parse(i.publishedAt);
+    if (!Number.isFinite(ts)) return false;
+    const age = now - ts;
+    return age <= maxAge && age >= -DAY_MS; // allow small clock skew
+  });
+}
+
+/**
+ * Merge prior cached items with this run's new items into a ranked, de-duplicated
+ * rolling cache (by URL and near-title), pruned to the freshness window.
+ */
+function mergeRolling(
+  prior: ClassifiedItem[],
+  fresh: ClassifiedItem[],
+  days: number,
+): ClassifiedItem[] {
+  const combined = pruneByAge([...fresh, ...prior], days).sort(
+    (a, b) => rank(b) - rank(a) || detail(b) - detail(a),
+  );
+  // Exact URL de-dup first…
+  const seenUrls = new Set<string>();
+  const urlDeduped: ClassifiedItem[] = [];
+  for (const i of combined) {
+    if (!i.url || seenUrls.has(i.url)) continue;
+    seenUrls.add(i.url);
+    urlDeduped.push(i);
+  }
+  // …then near-title de-dup (same story, several outlets).
+  return nearDedupe(urlDeduped).slice(0, CACHE_CAP);
 }
 
 function rank(i: ClassifiedItem): number {

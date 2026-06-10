@@ -8,6 +8,7 @@ const REPORTS_DIR = path.join(ROOT, 'reports');
 
 const SEEN_FILE = path.join(DATA_DIR, 'seen.json');
 const LATEST_ITEMS_FILE = path.join(DATA_DIR, 'latest-items.json');
+const SCAN_META_FILE = path.join(DATA_DIR, 'scan-meta.json');
 
 export interface SeenStore {
   urls: string[];
@@ -67,6 +68,26 @@ export async function saveLatestItems(items: ClassifiedItem[]): Promise<void> {
 
 export async function loadLatestItems(): Promise<ClassifiedItem[]> {
   return readJson<ClassifiedItem[]>(LATEST_ITEMS_FILE, []);
+}
+
+export interface ScanMeta {
+  /** Genuinely new items added in the most recent scan run. */
+  newItems: number;
+  /** Total items in the rolling 7-day cache after the run. */
+  totalItems: number;
+  /** True when the run found 0 new items but the cache still has fresh items. */
+  usedFallback: boolean;
+  updatedAt: string;
+}
+
+export async function saveScanMeta(meta: Omit<ScanMeta, 'updatedAt'>): Promise<void> {
+  await ensureDir(DATA_DIR);
+  const full: ScanMeta = { ...meta, updatedAt: new Date().toISOString() };
+  await fs.writeFile(SCAN_META_FILE, JSON.stringify(full, null, 2), 'utf8');
+}
+
+export async function loadScanMeta(): Promise<ScanMeta | null> {
+  return readJson<ScanMeta | null>(SCAN_META_FILE, null);
 }
 
 export interface SavedReport {

@@ -31,6 +31,11 @@ function topItems(items: ClassifiedItem[], n = 12): ClassifiedItem[] {
 const LOW_COUNT_NOTICE = 'נמצאו השבוע מעט פריטים רלוונטיים בלבד.';
 const LEGISLATION_TITLE = 'חקיקה ורגולציה השבוע';
 const NO_LEGISLATION = 'לא אותרו השבוע עדכוני חקיקה או רגולציה משמעותיים בתחום.';
+export const FALLBACK_NOTICE = 'לא נמצאו פריטים חדשים בהרצה זו, מוצג הדוח השבועי האחרון שנשמר.';
+
+export interface NewsletterOptions {
+  fallbackNote?: boolean;
+}
 
 function itemsForPrompt(items: ClassifiedItem[]): string {
   return JSON.stringify(
@@ -493,7 +498,11 @@ export function buildNewsletterHtml(
   items: ClassifiedItem[],
   aqi?: AqiReport,
   legal: ClassifiedItem[] = [],
+  opts: NewsletterOptions = {},
 ): string {
+  const fallbackBanner = opts.fallbackNote
+    ? `<tr><td style="padding:10px 20px;background:#fffbeb;border-bottom:1px solid #fde68a;color:#92400e;font-size:13px;">${esc(FALLBACK_NOTICE)}</td></tr>`
+    : '';
   const all = topItems(items, 12);
   const hero = all[0];
   const top = all.slice(1, 6); // up to 5 top stories
@@ -526,6 +535,7 @@ export function buildNewsletterHtml(
         <div style="color:#ffffff;font-size:20px;font-weight:bold;">${REPORT_TITLE}</div>
         <div style="color:#bbf7d0;font-size:13px;margin-top:4px;">${reportDate()} · חלון טריות: ${config.freshnessDays} ימים אחרונים</div>
       </td></tr>
+      ${fallbackBanner}
       ${statusSectionHtml(all, aqi)}
       ${legislationSectionHtml(legal)}
       ${emptyHtml}

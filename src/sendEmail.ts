@@ -1,10 +1,18 @@
 import { sendReportEmail } from './email.js';
 import { log } from './logger.js';
-import { loadLatestReport } from './storage.js';
+import { loadLatestItems, loadLatestReport } from './storage.js';
 
 /** npm run email-report — email the latest generated report (respects SEND_EMAIL). */
 async function main(): Promise<void> {
   log.step('EMAIL — sending weekly report');
+
+  // Never send an empty newsletter when there are no valid articles.
+  const items = await loadLatestItems();
+  if (items.length === 0) {
+    log.warn('Report cache is empty (no valid articles from the last 7 days) — not sending an empty newsletter.');
+    return;
+  }
+
   let report;
   try {
     report = await loadLatestReport();
