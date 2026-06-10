@@ -286,7 +286,14 @@ function fmt(iso?: string): string {
   return iso ? new Date(iso).toLocaleDateString('he-IL') : '—';
 }
 
-main().catch((err) => {
-  log.error(`Scan crashed: ${(err as Error).stack ?? err}`);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // All work is finished and persisted. Exit explicitly so lingering HTTP
+    // sockets / keep-alive handles can't hold the process open (CI hang fix).
+    log.info('SCAN process exiting successfully');
+    process.exit(0);
+  })
+  .catch((err) => {
+    log.error(`Scan crashed: ${(err as Error).stack ?? err}`);
+    process.exit(1);
+  });

@@ -45,7 +45,13 @@ async function main(): Promise<void> {
   log.step('REPORT — done');
 }
 
-main().catch((err) => {
-  log.error(`Report generation crashed: ${(err as Error).stack ?? err}`);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Exit explicitly so lingering HTTP sockets (AQI/OpenAI) don't hold it open.
+    log.info('REPORT process exiting successfully');
+    process.exit(0);
+  })
+  .catch((err) => {
+    log.error(`Report generation crashed: ${(err as Error).stack ?? err}`);
+    process.exit(1);
+  });

@@ -15,7 +15,13 @@ async function main(): Promise<void> {
   log.step('EMAIL — done');
 }
 
-main().catch((err) => {
-  log.error(`Email step crashed: ${(err as Error).stack ?? err}`);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Exit explicitly — the SMTP transport can otherwise keep the process alive.
+    log.info('EMAIL process exiting successfully');
+    process.exit(0);
+  })
+  .catch((err) => {
+    log.error(`Email step crashed: ${(err as Error).stack ?? err}`);
+    process.exit(1);
+  });
