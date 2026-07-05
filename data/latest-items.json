@@ -1,202 +1,143 @@
 [
   {
-    "title": "בין מושב תימורים לערוגות: התקדמות לקראת הקמת מתקן למיון ושריפת פסולת",
-    "url": "https://www.themarker.com/dynamo/energy/2026-06-26/ty-article/.premium/0000019f-0323-d514-a9bf-bb7bb2e10000",
-    "source": "TheMarker (Google News)",
-    "publishedAt": "2026-06-26T10:03:00.000Z",
-    "summary": "בין מושב תימורים לערוגות: התקדמות לקראת הקמת מתקן למיון ושריפת פסולת  TheMarker",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "High",
-    "fetchedAt": "2026-06-28T07:53:11.108Z",
-    "imageUrl": "https://img.haarets.co.il/bs/0000019f-0323-d514-a9bf-bb7bb2e10000/19/a4/7faf07f642e3aa33be4deec08f29/618372.jpg?precrop=2400,1395,x0,y101&width=1200&height=630&cmsprod",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "לא רק אש ועשן: הנתונים המפתיעים של זיהום האוויר במלחמה",
-    "url": "https://www.zavit.org.il/%d7%9c%d7%90-%d7%a8%d7%a7-%d7%90%d7%a9-%d7%95%d7%a2%d7%a9%d7%9f-%d7%94%d7%a0%d7%aa%d7%95%d7%a0%d7%99%d7%9d-%d7%94%d7%9e%d7%a4%d7%aa%d7%99%d7%a2%d7%99%d7%9d-%d7%a9%d7%9c-%d7%96%d7%99%d7%94%d7%95%d7%9d/",
-    "source": "זווית – סוכנות ידיעות למדע ולסביבה",
-    "publishedAt": "2026-06-23T09:09:47.000Z",
-    "summary": "מחקר חדש מצא שינויים רבים בריכוזי מזהמים ברחבי הארץ בחודשי המלחמה הראשונים, ולא רק באזורי הלחימה. נוסף על השפעות הפעילות הצבאית, הנתונים משקפים גם את השינויים באזורים שקלטו את המפונים [...]\nRead More...\nהפוסט לא רק אש ועשן: הנתונים המפתיעים של זיהום האוויר במלחמה הופיע ראשון בזווית | סוכנות ידיעות למדע ולסביבה",
-    "matchedKeywords": [
-      "מחקר"
-    ],
-    "categories": [
-      "מחקרים ופיתוח"
-    ],
-    "importance": "High",
-    "fetchedAt": "2026-06-28T07:53:15.667Z",
-    "imageUrl": "https://www.zavit.org.il/wp-content/themes/Zavit/img/man1.png",
-    "imageSource": "article-img"
-  },
-  {
-    "title": "פצצת אטום לא עצרה את חוק הפסולת, אבל המשבר הקואליציוני עלול לקבור אותו",
-    "url": "https://www.zman.co.il/697326/",
-    "source": "זמן ישראל (Google News)",
-    "publishedAt": "2026-06-22T13:00:04.000Z",
-    "summary": "פצצת אטום לא עצרה את חוק הפסולת, אבל המשבר הקואליציוני עלול לקבור אותו  זמן ישראל",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "High",
-    "fetchedAt": "2026-06-28T07:53:11.109Z"
-  },
-  {
-    "title": "עיריית אילת דורגה במקום הראשון במדד הרשויות הממחזרות בקטגוריית ערים, וזכתה באות \"הרשות הממחזרת\" של תאגיד המיחזור \"תמיר",
-    "url": "https://www.eilatredc.co.il/articles/%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%90%D7%99%D7%9C%D7%AA-%D7%93%D7%95%D7%A8%D7%92%D7%94-%D7%91%D7%9E%D7%A7%D7%95%D7%9D-%D7%94%D7%A8%D7%90%D7%A9%D7%95%D7%9F-%D7%91%D7%9E%D7%93%D7%93-%D7%94%D7%A8/",
-    "source": "רד סי אילת (Google News)",
-    "publishedAt": "2026-06-21T16:42:39.000Z",
-    "summary": "עיריית אילת דורגה במקום הראשון במדד הרשויות הממחזרות בקטגוריית ערים, וזכתה באות \"הרשות הממחזרת\" של תאגיד המיחזור \"תמיר  רד סי אילת",
-    "query": "תאגיד תמיר",
-    "matchedKeywords": [
-      "מיחזור",
-      "תמיר"
-    ],
-    "categories": [
-      "מחזור",
-      "חברות סביבה ישראליות"
-    ],
-    "importance": "Medium",
-    "fetchedAt": "2026-06-28T07:53:11.109Z",
-    "imageUrl": "http://www.eilatredc.co.il/wp-content/uploads/2026/06/FB_IMG_1782059515237.jpg",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "\"טובעים בפסולת של עצמנו\" | משבר האשפה והבשורה לשינוי",
-    "url": "https://www.inn.co.il/news/700046",
-    "source": "ערוץ 7 (Google News)",
-    "publishedAt": "2026-06-26T06:50:00.000Z",
-    "summary": "\"טובעים בפסולת של עצמנו\" | משבר האשפה והבשורה לשינוי  ערוץ 7",
-    "query": "הטמנה פסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.109Z",
-    "imageUrl": "https://2.a7.org/files/pictures/000/1220306.jpg",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "כלכלה מעגלית: גדות שירותי אקולוגיה זכתה במימון להקמת מתקן חדש",
-    "url": "https://www.port2port.co.il/article/%D7%AA%D7%A2%D7%A9%D7%99%D7%94-%D7%95%D7%A1%D7%97%D7%A8/%D7%AA%D7%A2%D7%A9%D7%99%D7%99%D7%94/%D7%9B%D7%9C%D7%9B%D7%9C%D7%94-%D7%9E%D7%A2%D7%92%D7%9C%D7%99%D7%AA-%D7%92%D7%93%D7%95%D7%AA-%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99-%D7%90%D7%A7%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%94-%D7%96%D7%9B%D7%AA%D7%94-%D7%91%D7%9E%D7%99%D7%9E%D7%95%D7%9F-%D7%9C%D7%94%D7%A7%D7%9E%D7%AA-%D7%9E%D7%AA%D7%A7%D7%9F-%D7%97%D7%93%D7%A9/",
-    "source": "PORT2PORT (Google News)",
-    "publishedAt": "2026-06-25T08:45:34.000Z",
-    "summary": "כלכלה מעגלית: גדות שירותי אקולוגיה זכתה במימון להקמת מתקן חדש  PORT2PORT",
-    "query": "כלכלה מעגלית ישראל",
-    "matchedKeywords": [
-      "כלכלה מעגלית"
-    ],
-    "categories": [
-      "כלכלה מעגלית"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.108Z"
-  },
-  {
-    "title": "“שרת הפסולת”: עידית סילמן במוקד הסערה הציבורית",
-    "url": "https://gal-gefen.co.il/news/206753",
-    "source": "גל גפן (Google News)",
-    "publishedAt": "2026-06-25T05:12:00.000Z",
-    "summary": "“שרת הפסולת”: עידית סילמן במוקד הסערה הציבורית  גל גפן",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.109Z"
-  },
-  {
-    "title": "שתי אחיות ישראליות הפכו את המאבק בפסולת ברפואה - להצלחה בין-לאומית",
-    "url": "https://www.maariv.co.il/news/health/article-1337129",
-    "source": "מעריב (Google News)",
-    "publishedAt": "2026-06-25T03:00:48.000Z",
-    "summary": "שתי אחיות ישראליות הפכו את המאבק בפסולת ברפואה - להצלחה בין-לאומית  מעריב",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.109Z"
-  },
-  {
-    "title": "מסתמן: ועדה בין־משרדית תמליץ לממשלה להקים רשות פסולת ארצית",
-    "url": "https://www.haaretz.co.il/nature/2026-06-23/ty-article/.premium/0000019e-f47f-d803-abdf-fcff0d620000",
-    "source": "הארץ (Google News)",
-    "publishedAt": "2026-06-23T13:26:00.000Z",
-    "summary": "מסתמן: ועדה בין־משרדית תמליץ לממשלה להקים רשות פסולת ארצית  הארץ",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.108Z"
-  },
-  {
-    "title": "הצד האפל של מהפכת ה-AI: מים, חשמל ופסולת בקנה מידה חסר תקדים",
-    "url": "https://www.ynet.co.il/digital/technews/article/b1008dswmgx",
-    "source": "ynet.co.il (Google News)",
-    "publishedAt": "2026-06-23T07:49:02.000Z",
-    "summary": "הצד האפל של מהפכת ה-AI: מים, חשמל ופסולת בקנה מידה חסר תקדים  ynet.co.il",
-    "query": "פסולת אלקטרונית ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.108Z"
-  },
-  {
-    "title": "הפסולת נערמת, הנתונים מוסתרים: שיא ההטמנה שחושף את הכשל של סילמן",
-    "url": "https://shakuf.co.il/63425",
-    "source": "שקוף (Google News)",
-    "publishedAt": "2026-06-21T19:45:00.000Z",
-    "summary": "הפסולת נערמת, הנתונים מוסתרים: שיא ההטמנה שחושף את הכשל של סילמן  שקוף",
+    "title": "הפסולת הפיראטית ביו\"ש: \"הגיע הזמן לקחת אחריות מלאה\"",
+    "url": "https://www.c14.co.il/article/1603959",
+    "source": "C14 (Google News)",
+    "publishedAt": "2026-06-30T11:11:11.000Z",
+    "summary": "הפסולת הפיראטית ביו\"ש: \"הגיע הזמן לקחת אחריות מלאה\"  C14",
     "query": "מחזור פסולת ישראל",
     "matchedKeywords": [
-      "פסולת",
-      "הטמנה"
+      "פסולת"
     ],
     "categories": [
       "ניהול פסולת"
     ],
-    "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.108Z"
+    "importance": "High",
+    "fetchedAt": "2026-07-05T07:29:09.206Z"
   },
   {
-    "title": "טרור סביבתי: ‘מפעלי אבן בחברון מזהמים את נחל באר שבע ואגן הבשור’ (וידאו)",
-    "url": "https://br7news.co.il/he/news/news-1782040658",
-    "source": "חדשות באר שבע והנגב (Google News)",
-    "publishedAt": "2026-06-21T11:17:38.000Z",
-    "summary": "טרור סביבתי: ‘מפעלי אבן בחברון מזהמים את נחל באר שבע ואגן הבשור’ (וידאו)  חדשות באר שבע והנגב",
+    "title": "כנפיים ברוטב פלסטיק: כך הפך ביטול מס החד פעמי למכת מדינה",
+    "url": "https://shakuf.co.il/63599",
+    "source": "שקוף (Google News)",
+    "publishedAt": "2026-07-01T15:47:51.000Z",
+    "summary": "כנפיים ברוטב פלסטיק: כך הפך ביטול מס החד פעמי למכת מדינה  שקוף",
+    "query": "פסולת פלסטיק ישראל",
+    "matchedKeywords": [
+      "פלסטיק"
+    ],
+    "categories": [
+      "מחזור פלסטיק"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:09.206Z",
+    "imageUrl": "https://shakuf.co.il/wp-content/uploads/2026/07/%D7%A2%D7%95%D7%AA%D7%A7-%D7%A9%D7%9C-%D7%A1%D7%99%D7%9C%D7%9E%D7%9F-%D7%96%D7%99%D7%94%D7%95%D7%9D.jpg",
+    "imageSource": "og:image"
+  },
+  {
+    "title": "בג\"ץ כנראה לא יקבע לישראל יעד אקלים, אבל הוא יכול לדרוש מהממשלה תוכנית",
+    "url": "https://www.calcalist.co.il/local_news/article/rjgwnw11qfe",
+    "source": "calcalist (Google News)",
+    "publishedAt": "2026-07-01T03:30:00.000Z",
+    "summary": "בג\"ץ כנראה לא יקבע לישראל יעד אקלים, אבל הוא יכול לדרוש מהממשלה תוכנית  calcalist",
     "query": "זיהום סביבתי ישראל",
     "matchedKeywords": [],
     "categories": [
       "ניהול פסולת"
     ],
     "importance": "Low",
-    "fetchedAt": "2026-06-28T07:53:11.109Z"
+    "fetchedAt": "2026-07-05T07:29:09.206Z",
+    "imageUrl": "https://pic1.calcalist.co.il/picserver3/crop_images/2024/12/22/HkD6p0HS1x/HkD6p0HS1x_0_4_2000_1126_0_large.jpg",
+    "imageSource": "og:image"
+  },
+  {
+    "title": "\"הנדסת האקלים\" הגיעה לכנסת - והקונספירציות תפסו את מרכז הבמה",
+    "url": "https://www.ynet.co.il/environment-science/article/hkco8nbmzx",
+    "source": "ynet (Google News)",
+    "publishedAt": "2026-06-30T13:23:58.000Z",
+    "summary": "\"הנדסת האקלים\" הגיעה לכנסת - והקונספירציות תפסו את מרכז הבמה  ynet",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:09.206Z",
+    "imageUrl": "https://ynet-pic1.yit.co.il/picserver6/crop_images/2023/11/30/Bkm2p0rH6/Bkm2p0rH6_0_0_3000_1689_0_large.jpg",
+    "imageSource": "og:image"
+  },
+  {
+    "title": "מנכ\"ל המשרד להגנת הסביבה: \"לא ישנו בלילות במלחמה\" | צפו",
+    "url": "https://www.c14.co.il/article/1603851",
+    "source": "C14 (Google News)",
+    "publishedAt": "2026-06-30T10:11:11.000Z",
+    "summary": "מנכ\"ל המשרד להגנת הסביבה: \"לא ישנו בלילות במלחמה\" | צפו  C14",
+    "query": "פסולת בניין ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:09.206Z"
+  },
+  {
+    "title": "הזהב שנזרק לפח: הפוטנציאל העצום של הפסולת בישראל",
+    "url": "https://www.c14.co.il/article/1603826",
+    "source": "C14 (Google News)",
+    "publishedAt": "2026-06-30T09:26:11.000Z",
+    "summary": "הזהב שנזרק לפח: הפוטנציאל העצום של הפסולת בישראל  C14",
+    "query": "מחזור פסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:09.206Z"
+  },
+  {
+    "title": "הפח הכתום בכפר סבא: מערך המיחזור בעיר משתנה",
+    "url": "https://www.tzomet-kfs.co.il/news/77127",
+    "source": "צומת השרון כפר סבא (Google News)",
+    "publishedAt": "2026-06-30T05:58:50.000Z",
+    "summary": "הפח הכתום בכפר סבא: מערך המיחזור בעיר משתנה  צומת השרון כפר סבא",
+    "query": "תאגיד תמיר",
+    "matchedKeywords": [
+      "מיחזור"
+    ],
+    "categories": [
+      "מחזור"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:09.206Z"
+  },
+  {
+    "title": "אין עשן: המודל הממוחשב שיחזה את השריפה הבאה",
+    "url": "https://www.zavit.org.il/%d7%90%d7%99%d7%9f-%d7%a2%d7%a9%d7%9f-%d7%94%d7%9e%d7%95%d7%93%d7%9c-%d7%94%d7%9e%d7%9e%d7%95%d7%97%d7%a9%d7%91-%d7%a9%d7%99%d7%97%d7%96%d7%94-%d7%90%d7%aa-%d7%94%d7%a9%d7%a8%d7%99%d7%a4%d7%94-%d7%94/",
+    "source": "זווית – סוכנות ידיעות למדע ולסביבה",
+    "publishedAt": "2026-06-29T10:46:52.000Z",
+    "summary": "בעידן של שינוי האקלים, שריפות הן כבר לא מקרה נדיר אלא אורחות של קבע בעונה החמה; מודל חיזוי ממוחשב בפיתוח ישראלי ינסה לחזות את התנהגות השריפות, ובכך לצמצם את נזקיהן [...]\nRead More...\nהפוסט אין עשן: המודל הממוחשב שיחזה את השריפה הבאה הופיע ראשון בזווית | סוכנות ידיעות למדע ולסביבה",
+    "matchedKeywords": [],
+    "categories": [
+      "חדשנות סביבתית"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:14.373Z"
+  },
+  {
+    "title": "שלושה צעדים שיכולים להתחיל לתקן את משבר הפסולת בישראל",
+    "url": "https://shakuf.co.il/63559",
+    "source": "שקוף (Google News)",
+    "publishedAt": "2026-06-29T08:01:00.000Z",
+    "summary": "שלושה צעדים שיכולים להתחיל לתקן את משבר הפסולת בישראל  שקוף",
+    "query": "מחזור פסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "fetchedAt": "2026-07-05T07:29:09.206Z"
   }
 ]
