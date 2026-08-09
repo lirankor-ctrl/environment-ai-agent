@@ -32,4 +32,6 @@ export interface ClassifiedItem extends RawItem {
   importance: Importance;
   matchedKeywords: string[];
   fetchedAt: string;
+  /** 'strong' (core recycling/waste) | 'secondary' (policy/pollution w/ impact) | 'weak' (general climate/lifestyle). */
+  relevanceTier: 'strong' | 'secondary' | 'weak';
 }

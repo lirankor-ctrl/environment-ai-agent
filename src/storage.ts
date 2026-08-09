@@ -1,5 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
+import { todayIso } from './clock.js';
 import type { ClassifiedItem } from './types.js';
 
 const ROOT = process.cwd();
@@ -73,8 +74,10 @@ export async function loadLatestItems(): Promise<ClassifiedItem[]> {
 export interface ScanMeta {
   /** Genuinely new items added in the most recent scan run. */
   newItems: number;
-  /** Total items in the rolling 7-day cache after the run. */
+  /** Total items in the rolling extended-window cache after the run. */
   totalItems: number;
+  /** Of totalItems, how many fall within the strict weekly freshness window. */
+  weeklyItems: number;
   /** True when the run found 0 new items but the cache still has fresh items. */
   usedFallback: boolean;
   updatedAt: string;
@@ -99,7 +102,7 @@ export interface SavedReport {
 /** Save the report as dated files plus stable "latest" copies. */
 export async function saveReport(markdown: string, html: string): Promise<SavedReport> {
   await ensureDir(REPORTS_DIR);
-  const date = new Date().toISOString().slice(0, 10);
+  const date = todayIso();
   const mdPath = path.join(REPORTS_DIR, `report-${date}.md`);
   const htmlPath = path.join(REPORTS_DIR, `report-${date}.html`);
 
@@ -115,4 +118,11 @@ export async function loadLatestReport(): Promise<{ markdown: string; html: stri
   const markdown = await fs.readFile(path.join(REPORTS_DIR, 'latest.md'), 'utf8');
   const html = await fs.readFile(path.join(REPORTS_DIR, 'latest.html'), 'utf8');
   return { markdown, html };
+}
+
+/** Save the per-source diagnostic audit report (item 7). */
+export async function saveSourceAudit(markdown: string, html: string): Promise<void> {
+  await ensureDir(REPORTS_DIR);
+  await fs.writeFile(path.join(REPORTS_DIR, 'source-audit-latest.md'), markdown, 'utf8');
+  await fs.writeFile(path.join(REPORTS_DIR, 'source-audit-latest.html'), html, 'utf8');
 }

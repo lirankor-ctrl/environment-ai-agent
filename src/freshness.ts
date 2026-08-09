@@ -1,4 +1,5 @@
 import { config } from './config.js';
+import { nowMs } from './clock.js';
 import type { RawItem } from './types.js';
 
 export interface FreshnessResult {
@@ -16,7 +17,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
  *  - within the last N days -> kept (fresh)
  */
 export function validateFreshness(items: RawItem[], days = config.freshnessDays): FreshnessResult {
-  const now = Date.now();
+  const now = nowMs();
   const maxAge = days * DAY_MS;
   const result: FreshnessResult = { fresh: [], rejectedNoDate: [], rejectedOld: [] };
 

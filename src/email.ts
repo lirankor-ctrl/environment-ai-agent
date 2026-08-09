@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import { config } from './config.js';
+import { now } from './clock.js';
 import { log } from './logger.js';
 import { REPORT_TITLE } from './report.js';
 
@@ -8,7 +9,7 @@ import { REPORT_TITLE } from './report.js';
  * Honors the SEND_EMAIL safety switch: when not "true", it only previews.
  */
 export async function sendReportEmail(html: string, markdown: string): Promise<void> {
-  const subject = `${REPORT_TITLE} – ${new Date().toLocaleDateString('he-IL')}`;
+  const subject = `${REPORT_TITLE} – ${now().toLocaleDateString('he-IL')}`;
 
   if (!config.email.send) {
     log.warn('SEND_EMAIL is not "true" — DRY RUN. No email will be sent.');

@@ -7,8 +7,11 @@ export const config = {
   },
   // Strict freshness window: only items published within this many days are kept.
   freshnessDays: Number(process.env.FRESHNESS_DAYS ?? 7),
-  // World Air Quality Index token (https://aqicn.org/data-platform/token/).
-  waqiToken: process.env.WAQI_TOKEN ?? '',
+  // Extended rolling cache window (days) — backs the "background/older updates"
+  // fallback section when the current week is unusually quiet.
+  extendedWindowDays: Number(process.env.EXTENDED_WINDOW_DAYS ?? 30),
+  // Minimum weekly item count before the fallback section kicks in.
+  minWeeklyItems: Number(process.env.MIN_WEEKLY_ITEMS ?? 5),
   smtp: {
     host: process.env.SMTP_HOST ?? '',
     port: Number(process.env.SMTP_PORT ?? 587),

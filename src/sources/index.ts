@@ -2,6 +2,7 @@ import type { RawItem } from '../types.js';
 import { log } from '../logger.js';
 import { scrapeList, tryRss } from './http.js';
 import { collectGoogleNews } from './googleNews.js';
+import { collectInfospot, isInfospotStatic } from './infospot.js';
 
 export interface Source {
   id: string;
@@ -21,25 +22,13 @@ const googleNews: Source = {
   collect: collectGoogleNews,
 };
 
-/** SECONDARY — Infospot environmental/industry news portal. */
+/** PRIMARY — Infospot environmental/industry news portal (dedicated parser). */
 const infospot: Source = {
   id: 'infospot',
   name: 'Infospot',
-  tier: 'secondary',
-  collect: async () => {
-    const rss = await tryRss('Infospot', [
-      'https://infospot.co.il/rss',
-      'https://infospot.co.il/feed',
-    ]);
-    if (rss.length) return rss;
-    log.warn('Infospot: no RSS feed, scraping homepage news links.');
-    return scrapeList({
-      sourceName: 'Infospot',
-      listUrl: 'https://infospot.co.il/',
-      linkSelector: 'a[href*="/n/"]',
-      baseUrl: 'https://infospot.co.il',
-    });
-  },
+  tier: 'primary',
+  collect: collectInfospot,
+  isStatic: (url) => isInfospotStatic(url),
 };
 
 /** SECONDARY — Zavit science & environment news agency (WordPress feed). */

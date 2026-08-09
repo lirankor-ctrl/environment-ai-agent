@@ -42,10 +42,24 @@ const AMBIGUOUS = new Set([
 
 export type RelevanceReason = 'ok' | 'no-keyword' | 'negative' | 'event' | 'foreign';
 
+/**
+ * Editorial relevance tier (item 4):
+ *  strong    — recycling/waste treatment, packaging waste, deposit law,
+ *              e-waste, construction waste, landfills, illegal dumping,
+ *              waste regulation/enforcement, recycling facilities/tech,
+ *              circular economy, Israeli recycling/environmental companies.
+ *  secondary — general Israeli environmental policy, pollution, or climate
+ *              policy with a direct operational/regulatory/business impact.
+ *  weak      — general climate commentary, nature stories, lifestyle,
+ *              educational/promotional content.
+ */
+export type RelevanceTier = 'strong' | 'secondary' | 'weak';
+
 export interface Relevance {
   relevant: boolean;
   reason: RelevanceReason;
   matched: string[];
+  tier: RelevanceTier;
 }
 
 // Events / tours — rejected unless the item is clearly a recycling/environment
@@ -101,6 +115,16 @@ const NEGATIVE_TERMS = [
 
 const POLITICS_TERMS = ['בחירות', 'קואליציה', 'אופוזיציה', 'נתניהו', 'גנץ', 'לפיד', 'מנדטים'];
 const POLICY_TERMS = ['חוק', 'מדיניות', 'רגולציה', 'תקנות', 'פסולת', 'מחזור', 'אריזות', 'פיקדון', 'זיהום', 'אכיפה'];
+
+// Signals that a soft (non-core) environmental item still has a concrete
+// operational, regulatory or business angle in Israel (-> 'secondary' tier).
+// A soft item with none of these is just commentary/lifestyle (-> 'weak').
+const OPERATIONAL_TERMS = [
+  ...POLICY_TERMS,
+  'מפעל', 'מפעלים', 'תעשייה', 'עסק', 'עסקים', 'השקעה', 'מענק', 'תקציב',
+  'רישוי', 'היתר', 'קנס', 'עיצום', 'תביעה', 'ועדה', 'ועדת', 'כנסת',
+  'המשרד להגנת הסביבה', 'רשות מקומית', 'עירייה', 'עיריית', 'משרד',
+];
 
 // Signals that an article is centrally about Israel.
 const ISRAEL_SIGNALS = [
@@ -169,28 +193,32 @@ function isCoreRecycling(t: string): boolean {
 export function assessRelevance(item: RawItem): Relevance {
   const t = text(item);
   const matched = matchedIn(t, STRONG_KEYWORDS);
-  if (!matched.length) return { relevant: false, reason: 'no-keyword', matched: [] };
+  const weak: Relevance = { relevant: false, reason: 'no-keyword', matched: [], tier: 'weak' };
+  if (!matched.length) return weak;
+
+  const core = isCoreRecycling(t);
+  const tier: RelevanceTier = core ? 'strong' : anyIn(t, OPERATIONAL_TERMS) ? 'secondary' : 'weak';
 
   // ---- Topical relevance ----
-  if (!isCoreRecycling(t)) {
+  if (!core) {
     // Not core. If there's no genuine soft environmental term either, the only
     // match was the ambiguous "מחזור" (revenue/cycle) — reject as irrelevant.
-    if (!anyIn(t, SOFT_KEYWORDS)) return { relevant: false, reason: 'negative', matched };
+    if (!anyIn(t, SOFT_KEYWORDS)) return { relevant: false, reason: 'negative', matched, tier };
     // Soft environmental match only — apply stricter filters.
-    if (anyIn(t, EVENT_TERMS)) return { relevant: false, reason: 'event', matched };
-    if (anyIn(t, NEGATIVE_TERMS)) return { relevant: false, reason: 'negative', matched };
+    if (anyIn(t, EVENT_TERMS)) return { relevant: false, reason: 'event', matched, tier };
+    if (anyIn(t, NEGATIVE_TERMS)) return { relevant: false, reason: 'negative', matched, tier };
     if (anyIn(t, POLITICS_TERMS) && !anyIn(t, POLICY_TERMS)) {
-      return { relevant: false, reason: 'negative', matched };
+      return { relevant: false, reason: 'negative', matched, tier };
     }
     if (t.includes('אקלים') && (t.includes('דעה') || t.includes('טור')) && !t.includes('ישראל')) {
-      return { relevant: false, reason: 'negative', matched };
+      return { relevant: false, reason: 'negative', matched, tier };
     }
   }
 
   // ---- Israel-relevance gate (applies to core + soft) ----
   if (!isIsraelRelevant(t, item.source ?? '')) {
-    return { relevant: false, reason: 'foreign', matched };
+    return { relevant: false, reason: 'foreign', matched, tier };
   }
 
-  return { relevant: true, reason: 'ok', matched };
+  return { relevant: true, reason: 'ok', matched, tier };
 }

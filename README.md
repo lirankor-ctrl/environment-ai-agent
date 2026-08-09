@@ -35,7 +35,7 @@
 הדוח ב-HTML הוא **ניוזלטר ויזואלי בעברית (RTL)**, בנוי מטבלאות + סגנונות inline כך שייראה תקין ב-Gmail ובמובייל:
 
 1. **כותרת** + תאריך + חלון טריות.
-2. **מצב הסביבה בישראל השבוע** (לפני תקציר המנהלים) – מדד איכות האוויר (AQI) עם כרטיסים צבעוניים: ממוצע ארצי (מדגם ערים) + ירושלים, תל אביב, חיפה ובאר שבע. צבעים: ירוק=טובה, צהוב=בינונית, כתום=בעייתית לרגישים, אדום=לא בריאה. מתחת – תמונת מצב קצרה (מגמת איכות אוויר, אירועי זיהום, דגשי מחזור/פסולת, פעולות אכיפה). אם אין נתונים: "נתוני איכות אוויר אינם זמינים כרגע" – והדוח ממשיך כרגיל.
+2. **מצב הסביבה בישראל השבוע** (לפני תקציר המנהלים) – כרטיס איכות אוויר קומפקטי (RTL) עם נתונים **רשמיים בזמן אמת** מהמשרד להגנת הסביבה (air.sviva.gov.il, ראו סעיף "נתוני איכות אוויר" למטה): **תמונת מצב ארצית** (מספר תחנות פעילות, פילוח לפי סטטוס, התחנה עם המצב הגרוע ביותר כרגע — ללא ממוצע ארצי מומצא), ואחריה כרטיסים לפי עיר — תל אביב, ירושלים, חיפה, באר שבע, ראשון לציון — כל אחד עם **שם התחנה בפועל**, המדד, הסטטוס הרשמי (טובה/בינונית/נמוכה/נמוכה מאוד) והמזהם הדומיננטי. מוצגות רק ערים עם נתונים בפועל (עיר חסרה מתועדת בלוג בלבד, לא כרטיס ריק). מתחת לכרטיס: שעת המדידה, קישור למקור, והערת הבהרה על נתוני זמן-אמת טרם בקרת נתונים. הודעת "נתוני איכות אוויר אינם זמינים כרגע" מוצגת **פעם אחת בלבד**, ורק כששני המקורות הרשמיים נכשלים. אחריה — תמונת מצב קצרה נוספת (אירועי זיהום, דגשי מחזור/פסולת, פעולות אכיפה).
 3. **חקיקה ורגולציה השבוע** (מתחת ל"מצב הסביבה", לפני תקציר המנהלים) – עדכוני חקיקה/רגולציה/אכיפה מהשבוע (חוק האריזות/הפיקדון, תקנות, תזקירים, דיוני ועדה, כתבי אישום/תביעות, אכיפה, פסולת בלתי-חוקית וכו'). לכל פריט: כותרת, תאריך, מקור, הסבר קצר וקישור. ללא מכרזים, ללא דפי gov.il סטטיים, ורק מ-7 הימים האחרונים. אם אין: "לא אותרו השבוע עדכוני חקיקה או רגולציה משמעותיים בתחום."
 4. **Hero** – הסיפור החשוב ביותר עם תמונה גדולה, תג חשיבות, כותרת, מקור, תאריך ותקציר.
 5. **הסיפורים החשובים השבוע** – עד 5 כרטיסים עם תמונה ממוזערת, כותרת, מקור, תאריך, תקציר קצר, חשיבות וקישור.
@@ -53,6 +53,7 @@
 ```
 src/
   config.ts          טעינת משתני סביבה (כולל חלון הטריות)
+  clock.ts           שעון הפניה (REPORT_AS_OF לבדיקות דטרמיניסטיות)
   logger.ts          לוגים עם חותמת זמן
   types.ts           טיפוסים
   keywords.ts        מילות מפתח (חזקות/רכות), מיפוי לקטגוריות
@@ -61,16 +62,26 @@ src/
   freshness.ts       אימות טריות (דחיית פריטים ללא תאריך / ישנים)
   sources/
     googleNews.ts    שכבת חיפוש Google News RSS (השאילתות + פענוח)
-    http.ts          עזרי HTTP, RSS, גרידה, חילוץ תאריכים, סינון URLs
-    index.ts         רישום המקורות (Google News ראשי + משניים)
-  storage.ts         seen.json (URL+כותרת) + נרמול כותרות + פריטים ודוחות
-  report.ts          יצירת הדוח הקצר (OpenAI + גיבוי) ורינדור HTML
+    infospot.ts       פרסר ייעודי ל-Infospot (רשימת חדשות /nl/חדשות)
+    http.ts          עזרי HTTP, RSS, גרידה, חילוץ תאריכים, סינון URLs, ניקוי תקצירים
+    index.ts         רישום המקורות (Google News + Infospot ראשיים, זווית + ISEES משניים)
+  airQuality.ts      אורקסטרטור נתוני איכות אוויר (3 שכבות גיבוי) — ראו סעיף ייעודי למטה
+  airQuality/
+    types.ts         טיפוסים (OfficialStatus, AqiReport, AirQualityClient...)
+    client.ts        קליינט HTTP ל-air.sviva.gov.il (טוקן אורח + endpoints)
+    mapper.ts         לוגיקה טהורה: התאמת ערים לתחנות, תמונת מצב ארצית
+    *.test.ts         בדיקות (node:test) ללא תלות ברשת
+  sourceAudit.ts     דוח אבחון פר-מקור (reports/source-audit-latest.*)
+  sourceReview/      גילוי/סקירת מקורות שבועית
+  storage.ts         seen.json + מטמון מתגלגל 30 יום + פריטים ודוחות
+  report.ts          בניית הדוח הדטרמיניסטי (9 סעיפים) ורינדור MD+HTML
   email.ts           שליחת מייל (עם מתג בטיחות SEND_EMAIL)
   scan.ts            npm run scan
   generateReport.ts  npm run report
   sendEmail.ts       npm run email-report
-data/                latest-items.json (מטמון 7 ימים) + scan-meta.json + seen.json
-reports/             הדוחות שנוצרו (latest.md / latest.html + גרסאות מתוארכות)
+  testAirQuality.ts  npm run test-air-quality
+data/                latest-items.json (מטמון מתגלגל) + scan-meta.json + seen.json + source-review*.json
+reports/             הדוחות שנוצרו (latest.md/.html, source-audit-latest.md/.html + גרסאות מתוארכות)
 .github/workflows/   הרצה שבועית אוטומטית
 ```
 
@@ -92,7 +103,6 @@ cp .env.example .env   # ב-Windows PowerShell: copy .env.example .env
 | `OPENAI_API_KEY` | מפתח OpenAI (לכתיבת הדוח). בלי מפתח – נוצר דוח גיבוי בסיסי. |
 | `OPENAI_MODEL` | ברירת מחדל `gpt-4o-mini` |
 | `FRESHNESS_DAYS` | חלון הטריות בימים. ברירת מחדל `7`. |
-| `WAQI_TOKEN` | טוקן חינמי ל-World Air Quality Index (לסעיף "מצב הסביבה"). אם ריק – הסעיף יציג "נתוני איכות אוויר אינם זמינים כרגע" והדוח עדיין ייווצר. |
 | `SMTP_HOST` | למשל `smtp.gmail.com` |
 | `SMTP_PORT` | `587` (STARTTLS) או `465` (SSL) |
 | `SMTP_USER` | כתובת ה-Gmail שלך |
@@ -109,9 +119,11 @@ cp .env.example .env   # ב-Windows PowerShell: copy .env.example .env
 ## איך מריצים מקומית
 
 ```bash
-npm run scan          # אוסף, מאמת טריות, מסווג -> data/latest-items.json
-npm run report        # יוצר דוח עברית קצר -> reports/latest.md + reports/latest.html
-npm run email-report  # שולח את הדוח (רק אם SEND_EMAIL=true)
+npm run scan               # אוסף, מאמת טריות, מסווג -> data/latest-items.json
+npm run report             # יוצר דוח עברית -> reports/latest.md + reports/latest.html
+npm run email-report       # שולח את הדוח (רק אם SEND_EMAIL=true)
+npm run test-air-quality   # שולף ומדפיס נתוני איכות אוויר רשמיים בלבד — בלי ליצור/לשלוח דוח
+npm test                   # מריץ את בדיקות היחידה (node:test, כולל airQuality)
 ```
 
 או הכול ברצף: `npm run all` · בדיקת טיפוסים: `npm run typecheck`
@@ -151,22 +163,47 @@ Articles without image:     0
 Image source — og:image: 6 · twitter:image: 0 · article-img: 0
 ```
 
-ושלב הדוח מדפיס את מקור נתוני איכות האוויר והערים שהתקבלו/חסרו:
+ושלב הדוח מדפיס את מקור נתוני איכות האוויר, שכבת הגיבוי שבה נעשה שימוש, והערים שהתקבלו/חסרו:
 
 ```
-AQI source: World Air Quality Index (waqi.info)
-AQI cities retrieved: ירושלים, תל אביב, חיפה, באר שבע
+[air-quality] obtained a guest API token from air.sviva.gov.il (public, credential-free).
+[air-quality] requesting https://air-papi.sviva.gov.il/v1/envista/stations/index/latest
+[air-quality] tier1 OK — status=200 stations=276 index entries=189
+[air-quality] city "תל אביב" -> station "רחוב לחי"
+AQI source: המשרד להגנת הסביבה — מערך הניטור הארצי (air.sviva.gov.il) (official-index)
+AQI cities retrieved: תל אביב, ירושלים, חיפה, באר שבע, ראשון לציון
 AQI cities missing: none
 Legislation/regulation items found: 2
 Items rejected as tenders: 0
 Items rejected as not legal/regulatory: 8
 ```
 
-### הגדרת נתוני איכות אוויר (WAQI)
-1. הירשם וקבל טוקן חינמי: https://aqicn.org/data-platform/token/
-2. הוסף ל-`.env`: `WAQI_TOKEN=הטוקן_שלך` (וב-GitHub: Secret בשם `WAQI_TOKEN`).
-3. בלי טוקן – הסעיף יציג "נתוני איכות אוויר אינם זמינים כרגע", והדוח עדיין ייווצר במלואו.
-> הנתונים בסולם US-EPA AQI: ‎0–50 טובה (ירוק), ‎51–100 בינונית (צהוב), ‎101–150 בעייתית לרגישים (כתום), ‎151+ לא בריאה (אדום).
+## נתוני איכות אוויר – air.sviva.gov.il
+
+הסעיף "מצב הסביבה בישראל השבוע" נשען על **המקור הרשמי היחיד** לנתוני איכות אוויר בישראל: אתר הניטור הארצי של המשרד להגנת הסביבה, [air.sviva.gov.il](https://air.sviva.gov.il/). **אין צורך בטוקן/מפתח** — האתר עצמו טוען את המפה הציבורית שלו באמצעות טוקן-אורח חד-פעמי שכל דפדפן מקבל ללא הזדהות, וכך גם הסוכן.
+
+**איך הנתונים נאספים** (`src/airQuality.ts` + `src/airQuality/`):
+1. בקשת טוקן-אורח ציבורי מ-`POST https://air.sviva.gov.il/Account/GetApiToken` (`{"userName":"Guest"}`) — בדיוק הקריאה שכל דפדפן מבצע בטעינת הדף, ללא הזדהות וללא עקיפת הגנות.
+2. שליפת רשימת התחנות מ-`GET https://air-papi.sviva.gov.il/v1/envista/stations` (כולל שדה `city` לכל תחנה).
+3. שליפת המדד/סטטוס העדכני **לכל התחנות בבת אחת** מ-`GET https://air-papi.sviva.gov.il/v1/envista/stations/index/latest` — נקודת הקצה המובנית (JSON) שמזינה את המפה בזמן אמת של האתר עצמו, כולל תמצית "התחנה הגרועה ביותר כרגע" שהמערכת מחשבת בעצמה.
+4. התאמת חמש הערים (תל אביב, ירושלים, חיפה, באר שבע, ראשון לציון) לתחנה פעילה ראשונה עם נתונים עדכניים בעיר, לפי שדה ה-`city`.
+5. **תמונת מצב ארצית** מחושבת מהנתונים הרשמיים בלבד: מספר תחנות פעילות עם נתונים, פילוח לפי כל אחד מארבעת הסטטוסים הרשמיים (טובה/בינונית/נמוכה/נמוכה מאוד), והתחנה עם המצב הגרוע ביותר כרגע (כפי שהמקור הרשמי עצמו מזהה) — **ללא חישוב ממוצע ארצי** שהמתודולוגיה הרשמית אינה תומכת בו.
+
+**היררכיית גיבוי (3 שכבות):**
+1. **נקודת הקצה המובנית הרשמית** (`stations/index/latest`) — מדד וסטטוס מחושבים, לכל התחנות.
+2. **קריאה גולמית לאותה מערכת רשמית** (`stations/{id}/data/latest`) — כשנקודת הקצה של המדד המחושב אינה זמינה, מוצגות מדידות זיהום גולמיות רשמיות (ללא סטטוס/מדד מומצא) כדי לא להציג כלום כשיש בכל זאת מידע רשמי חלקי.
+3. **הודעה קומפקטית אחת בלבד** — "נתוני איכות אוויר אינם זמינים כרגע" — רק כששתי השכבות הרשמיות נכשלות. ההודעה מוצגת **פעם אחת בדיוק**, אף פעם לא כפולה.
+
+**הבהרת נתוני זמן-אמת:** בכל דוח שבו יש נתונים מוצגת ההערה הרשמית:
+> "הנתונים מבוססים על מדידות בזמן אמת של מערך הניטור הארצי ועשויים להשתנות לאחר בקרת נתונים."
+
+**בדיקה מקומית ללא יצירת דוח:**
+```bash
+npm run test-air-quality
+```
+הפקודה שולפת ומדפיסה את תמונת המצב הארצית, את חמש הערים (תחנה שנבחרה, מדד, סטטוס, מזהם דומיננטי), רשימת ערים חסרות, ואת האבחון המלא (endpoint, HTTP status, מספר תחנות, שכבת הגיבוי שנעשה בה שימוש) — בלי לגעת ב-`reports/` ובלי לשלוח מייל.
+
+**בדיקות יחידה** (`npm test`, ב-`src/airQuality.test.ts` ו-`src/airQuality/mapper.test.ts`, עם `node:test` המובנה — אין תלות חדשה): תגובה תקינה, כיסוי חלקי של ערים, תגובה פגומה, timeout, וכשל מלא של המקור הרשמי (כולן ללא רשת אמיתית, דרך `AirQualityClient` הניתן להזרקה).
 
 ## איך בודקים לפני חיבור מייל אמיתי
 
@@ -189,7 +226,7 @@ Items rejected as not legal/regulatory: 8
 
 ### Secrets שצריך להגדיר ב-GitHub
 תחת **Settings → Secrets and variables → Actions**:
-`OPENAI_API_KEY`, `OPENAI_MODEL` (אופציונלי), `WAQI_TOKEN` (אופציונלי), `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM`, `EMAIL_TO`.
+`OPENAI_API_KEY`, `OPENAI_MODEL` (אופציונלי), `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM`, `EMAIL_TO`. (נתוני איכות האוויר אינם דורשים Secret — ראו סעיף "נתוני איכות אוויר" למעלה.)
 
 ה-workflow גם שומר אוטומטית חזרה ל-repo את `data/latest-items.json` (המטמון המתגלגל ל-7 ימים), `data/scan-meta.json` ו-`data/seen.json` – כך שהרצה של השבוע הבא ממזגת עם הפריטים הנוכחיים והדוח לעולם לא מתרוקן.
 

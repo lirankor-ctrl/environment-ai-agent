@@ -1,110 +1,198 @@
-import axios from 'axios';
-import { config } from './config.js';
 import { log } from './logger.js';
+import { API_BASE, svivaClient } from './airQuality/client.js';
+import { buildNationalSnapshot, indexEntriesByStation, matchCityStations } from './airQuality/mapper.js';
+import {
+  PRELIMINARY_DATA_NOTE,
+  SVIVA_SOURCE_URL,
+  type AirQualityClient,
+  type AqiDiagnostics,
+  type AqiReport,
+  type CityAirQuality,
+} from './airQuality/types.js';
 
-export type AqiBand = 'good' | 'moderate' | 'usg' | 'unhealthy';
+export * from './airQuality/types.js';
 
-export interface AqiCity {
-  name: string;
-  aqi: number;
-  band: AqiBand;
-  status: string;
-}
+/** The five cities the weekly report always tries to cover. */
+export const DEFAULT_CITIES = ['תל אביב', 'ירושלים', 'חיפה', 'באר שבע', 'ראשון לציון'];
 
-export interface AqiReport {
-  available: boolean;
-  source: string;
-  national?: { aqi: number; band: AqiBand; status: string };
-  cities: AqiCity[];
-  retrieved: string[];
-  missing: string[];
-}
+const SOURCE_LABEL = 'המשרד להגנת הסביבה — מערך הניטור הארצי (air.sviva.gov.il)';
+const INDEX_ENDPOINT = `${API_BASE}/stations/index/latest`;
+const RAW_ENDPOINT = `${API_BASE}/stations/{id}/data/latest`;
 
-// Cities to report (with geo fallback for the WAQI feed).
-const CITIES = [
-  { key: 'jerusalem', he: 'ירושלים', geo: '31.7683;35.2137' },
-  { key: 'tel-aviv', he: 'תל אביב', geo: '32.0853;34.7818' },
-  { key: 'haifa', he: 'חיפה', geo: '32.7940;34.9896' },
-  { key: 'beer-sheva', he: 'באר שבע', geo: '31.2518;34.7913' },
-];
+/**
+ * Tier 1 — the official structured endpoint the site's own real-time map
+ * uses: computed status/index per station, already carrying the Ministry's
+ * own status text (טובה/בינונית/נמוכה/נמוכה מאוד) and its own "current worst
+ * station" summary. Preferred whenever it's reachable.
+ */
+async function tryOfficialIndex(cities: string[], client: AirQualityClient): Promise<AqiReport | null> {
+  try {
+    const token = await client.getGuestApiToken();
+    log.info('[air-quality] obtained a guest API token from air.sviva.gov.il (public, credential-free).');
+    log.info(`[air-quality] requesting ${INDEX_ENDPOINT}`);
+    const [stations, indexLatest] = await Promise.all([client.fetchStations(token), client.fetchIndexLatest(token)]);
+    log.info(
+      `[air-quality] tier1 OK — status=200 stations=${stations.length} index entries=${indexLatest.data.length}`,
+    );
 
-const STATUS_HE: Record<AqiBand, string> = {
-  good: 'טובה',
-  moderate: 'בינונית',
-  usg: 'בעייתית לרגישים',
-  unhealthy: 'לא בריאה',
-};
+    const byStation = indexEntriesByStation(indexLatest.data);
+    const { cities: cityResults, missingCities, matched } = matchCityStations(stations, byStation, cities);
+    const national = buildNationalSnapshot(indexLatest, stations);
 
-/** US-EPA AQI band (collapsed to the four requested levels). */
-export function bandOf(aqi: number): AqiBand {
-  if (aqi <= 50) return 'good';
-  if (aqi <= 100) return 'moderate';
-  if (aqi <= 150) return 'usg';
-  return 'unhealthy';
-}
-
-export function statusHe(band: AqiBand): string {
-  return STATUS_HE[band];
-}
-
-interface WaqiResponse {
-  status: string;
-  data?: { aqi?: number | string };
-}
-
-/** Fetch a single city's AQI (city keyword first, then geo coordinates). */
-async function cityAqi(city: (typeof CITIES)[number]): Promise<number | null> {
-  const token = config.waqiToken;
-  const urls = [
-    `https://api.waqi.info/feed/${city.key}/?token=${token}`,
-    `https://api.waqi.info/feed/geo:${city.geo}/?token=${token}`,
-  ];
-  for (const url of urls) {
-    try {
-      const res = await axios.get<WaqiResponse>(url, { timeout: 15000 });
-      if (res.data.status === 'ok') {
-        const aqi = Number(res.data.data?.aqi);
-        if (Number.isFinite(aqi) && aqi > 0) return Math.round(aqi);
-      }
-    } catch {
-      // try next URL
+    for (const [city, station] of Object.entries(matched)) {
+      log.info(`[air-quality] city "${city}" -> station "${station ?? '(no match)'}"`);
     }
+    if (missingCities.length) {
+      log.warn(`[air-quality] cities with no current data (logged only, not shown as empty cards): ${missingCities.join(', ')}`);
+    }
+
+    const diagnostics: AqiDiagnostics = {
+      endpoint: INDEX_ENDPOINT,
+      httpStatus: 200,
+      stationsReceived: stations.length,
+      matchedStations: matched,
+      missingCities,
+      dataTimestamp: indexLatest.datetime,
+      fallbackTier: 'official-index',
+    };
+
+    return {
+      available: true,
+      source: SOURCE_LABEL,
+      sourceUrl: SVIVA_SOURCE_URL,
+      measuredAt: indexLatest.datetime,
+      national,
+      cities: cityResults,
+      missingCities,
+      disclaimer: PRELIMINARY_DATA_NOTE,
+      diagnostics,
+    };
+  } catch (err) {
+    log.warn(`[air-quality] tier 1 (official index) unavailable — ${(err as Error).message}`);
+    return null;
   }
-  return null;
 }
 
 /**
- * Fetch current air quality for the reported cities. Never throws — on missing
- * token or total failure returns { available:false } so the report still runs.
+ * Tier 2 — same official system, raw per-station pollutant readings (no
+ * computed index/status; we do not invent one). Used only when the computed
+ * index endpoint itself is unreachable, so the newsletter still shows real
+ * official measurements and timestamps instead of nothing.
  */
-export async function fetchAirQuality(): Promise<AqiReport> {
-  const SOURCE = 'World Air Quality Index (waqi.info)';
-  if (!config.waqiToken) {
-    log.warn('WAQI_TOKEN not set — air quality section will show as unavailable.');
-    return { available: false, source: 'unavailable', cities: [], retrieved: [], missing: CITIES.map((c) => c.he) };
-  }
+async function tryOfficialRawReadings(cities: string[], client: AirQualityClient): Promise<AqiReport | null> {
+  try {
+    const token = await client.getGuestApiToken();
+    const stations = await client.fetchStations(token);
+    log.info(`[air-quality] tier2 fallback — requesting per-station readings from ${RAW_ENDPOINT}`);
 
-  const cities: AqiCity[] = [];
-  const retrieved: string[] = [];
-  const missing: string[] = [];
+    const cityResults: CityAirQuality[] = [];
+    const missingCities: string[] = [];
+    const matched: Record<string, string | null> = {};
+    let latestTs: string | null = null;
 
-  for (const c of CITIES) {
-    const aqi = await cityAqi(c);
-    if (aqi == null) {
-      missing.push(c.he);
-      continue;
+    for (const city of cities) {
+      const station = stations.find((s) => s.active && (s.city ?? '').startsWith(city));
+      if (!station) {
+        missingCities.push(city);
+        matched[city] = null;
+        continue;
+      }
+      try {
+        const data = await client.fetchStationDataLatest(token, station.stationId);
+        const point = data.data[0];
+        const dominant = point?.channels?.[0];
+        if (!point || !dominant) {
+          missingCities.push(city);
+          matched[city] = null;
+          continue;
+        }
+        matched[city] = station.name;
+        latestTs = point.datetime;
+        cityResults.push({
+          city,
+          stationName: station.name,
+          measuredAt: point.datetime,
+          index: null,
+          status: null,
+          dominantPollutant: dominant.alias ?? dominant.name ?? null,
+          degraded: true,
+        });
+      } catch (err) {
+        log.warn(`[air-quality] tier2: station ${station.stationId} (${city}) failed — ${(err as Error).message}`);
+        missingCities.push(city);
+        matched[city] = null;
+      }
     }
-    const band = bandOf(aqi);
-    cities.push({ name: c.he, aqi, band, status: statusHe(band) });
-    retrieved.push(c.he);
-  }
 
-  let national: AqiReport['national'];
-  if (cities.length) {
-    const avg = Math.round(cities.reduce((s, x) => s + x.aqi, 0) / cities.length);
-    national = { aqi: avg, band: bandOf(avg), status: statusHe(bandOf(avg)) };
-  }
+    if (!cityResults.length) return null;
+    log.warn('[air-quality] using tier 2 — raw station readings only (no official computed status).');
 
-  const available = cities.length > 0;
-  return { available, source: available ? SOURCE : 'unavailable', national, cities, retrieved, missing };
+    return {
+      available: true,
+      source: `${SOURCE_LABEL} — נתוני מדידה גולמיים (המדד הרשמי אינו זמין כרגע)`,
+      sourceUrl: SVIVA_SOURCE_URL,
+      measuredAt: latestTs,
+      national: null,
+      cities: cityResults,
+      missingCities,
+      disclaimer: PRELIMINARY_DATA_NOTE,
+      diagnostics: {
+        endpoint: RAW_ENDPOINT,
+        httpStatus: 200,
+        stationsReceived: stations.length,
+        matchedStations: matched,
+        missingCities,
+        dataTimestamp: latestTs,
+        fallbackTier: 'official-raw-readings',
+        fallbackReason: 'stations/index/latest (tier 1) was unavailable',
+      },
+    };
+  } catch (err) {
+    log.warn(`[air-quality] tier 2 (raw readings) also unavailable — ${(err as Error).message}`);
+    return null;
+  }
+}
+
+/** Tier 3 — compact "unavailable" result. Never throws. */
+function unavailable(cities: string[], reason: string): AqiReport {
+  log.error(`[air-quality] all official sources unavailable — ${reason}`);
+  return {
+    available: false,
+    source: 'unavailable',
+    sourceUrl: SVIVA_SOURCE_URL,
+    measuredAt: null,
+    national: null,
+    cities: [],
+    missingCities: cities,
+    disclaimer: PRELIMINARY_DATA_NOTE,
+    diagnostics: {
+      endpoint: INDEX_ENDPOINT,
+      httpStatus: null,
+      stationsReceived: 0,
+      matchedStations: {},
+      missingCities: cities,
+      dataTimestamp: null,
+      fallbackTier: 'unavailable',
+      fallbackReason: reason,
+    },
+  };
+}
+
+/**
+ * Fetch current official Israeli air-quality data (air.sviva.gov.il), with a
+ * 3-tier fallback. Never throws — worst case returns an `available:false`
+ * report so the report pipeline always completes. `client` is injectable so
+ * this can be unit-tested without hitting the network (see airQuality.test.ts).
+ */
+export async function fetchAirQuality(
+  cities: string[] = DEFAULT_CITIES,
+  client: AirQualityClient = svivaClient,
+): Promise<AqiReport> {
+  const tier1 = await tryOfficialIndex(cities, client);
+  if (tier1) return tier1;
+
+  const tier2 = await tryOfficialRawReadings(cities, client);
+  if (tier2) return tier2;
+
+  return unavailable(cities, 'Both the official index endpoint and the raw-readings fallback failed or timed out.');
 }

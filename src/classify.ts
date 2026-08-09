@@ -1,5 +1,7 @@
 import type { Category, ClassifiedItem, Importance, RawItem } from './types.js';
 import { CATEGORY_KEYWORDS, KEYWORDS } from './keywords.js';
+import { assessRelevance } from './relevance.js';
+import { now } from './clock.js';
 
 function haystack(item: RawItem): string {
   return `${item.title} ${item.summary ?? ''}`.toLowerCase();
@@ -97,11 +99,18 @@ function rankImportance(item: RawItem): Importance {
 export function classify(item: RawItem): ClassifiedItem {
   const matchedKeywords = findKeywords(item);
   const categories = findCategories(item);
+  const tier = assessRelevance(item).tier;
+  // Only 'strong' (core waste/recycling) items default into the waste-management
+  // bucket when no specific category matched. Secondary/weak items (general
+  // climate/policy/pollution) must NOT be mislabeled as a recycling/waste story
+  // just because they matched a soft keyword — they fall back to 'קיימות'.
+  const fallbackCategory: Category = tier === 'strong' ? 'ניהול פסולת' : 'קיימות';
   return {
     ...item,
     matchedKeywords,
-    categories: categories.length ? categories : ['ניהול פסולת'],
+    categories: categories.length ? categories : [fallbackCategory],
     importance: rankImportance(item),
-    fetchedAt: new Date().toISOString(),
+    relevanceTier: tier,
+    fetchedAt: now().toISOString(),
   };
 }

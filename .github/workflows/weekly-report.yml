@@ -33,12 +33,14 @@ jobs:
       - name: Scan sources
         run: npm run scan
 
+      - name: Source discovery & review
+        run: npm run review-sources
+
       - name: Generate Hebrew report
         run: npm run report
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
-          WAQI_TOKEN: ${{ secrets.WAQI_TOKEN }}
 
       - name: Send email
         run: npm run email-report
@@ -68,5 +70,7 @@ jobs:
           # Persist the rolling 7-day report cache, scan metadata and seen history
           # so next week's run merges with this week's items (and never empties).
           git add data/latest-items.json data/scan-meta.json data/seen.json
+          # Source discovery/review outputs (latest result + recommendation archive).
+          git add data/source-review.json data/source-review-history.json
           git commit -m "chore: update weekly cache [skip ci]" || echo "No changes to commit"
           git push || echo "Nothing to push"

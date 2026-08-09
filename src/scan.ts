@@ -1,11 +1,13 @@
 import { config } from './config.js';
 import { classify } from './classify.js';
+import { nowMs } from './clock.js';
 import { validateFreshness } from './freshness.js';
 import { log } from './logger.js';
 import { assessRelevance } from './relevance.js';
 import { SOURCES, type Source } from './sources/index.js';
 import { decodeGoogleNewsUrl, isGoogleNewsUrl } from './sources/googleNews.js';
 import { enrichWithDate, fetchArticleImage, isIgnoredUrl, mapLimit } from './sources/http.js';
+import { buildSourceAudit, newSourceStats, renderSourceAuditHtml, renderSourceAuditMarkdown, type SourceStats } from './sourceAudit.js';
 import {
   loadLatestItems,
   loadSeen,
@@ -13,48 +15,25 @@ import {
   saveLatestItems,
   saveScanMeta,
   saveSeen,
+  saveSourceAudit,
   type Seen,
 } from './storage.js';
 import type { ClassifiedItem, RawItem } from './types.js';
 
 const ENRICH_CONCURRENCY = 5;
 
-interface SourceStats {
-  name: string;
-  tier: Source['tier'];
-  found: number;
-  duplicates: number;
-  rejectedStatic: number;
-  keywordMatches: number;
-  rejectedIrrelevant: number;
-  rejectedEvents: number;
-  rejectedForeign: number;
-  rejectedOld: number;
-  included: number;
-}
-
 async function processSource(
   source: Source,
   seen: Seen,
 ): Promise<{ stats: SourceStats; items: ClassifiedItem[] }> {
-  const stats: SourceStats = {
-    name: source.name,
-    tier: source.tier,
-    found: 0,
-    duplicates: 0,
-    rejectedStatic: 0,
-    keywordMatches: 0,
-    rejectedIrrelevant: 0,
-    rejectedEvents: 0,
-    rejectedForeign: 0,
-    rejectedOld: 0,
-    included: 0,
-  };
+  const stats: SourceStats = newSourceStats(source);
 
   let collected: RawItem[] = [];
   try {
     collected = await source.collect();
   } catch (err) {
+    stats.accessible = false;
+    stats.error = (err as Error).message;
     log.error(`${source.name}: collect failed — ${(err as Error).message}`);
     return { stats, items: [] };
   }
@@ -103,7 +82,9 @@ async function processSource(
   const enriched = await mapLimit(candidates, ENRICH_CONCURRENCY, (i) => enrichWithDate(i));
 
   const { fresh, rejectedNoDate, rejectedOld } = validateFreshness(enriched, config.freshnessDays);
-  stats.rejectedOld = rejectedNoDate.length + rejectedOld.length;
+  stats.rejectedUndated = rejectedNoDate.length;
+  stats.rejectedOldDate = rejectedOld.length;
+  stats.datedCandidates = fresh.length + rejectedOld.length; // relevant candidates that did carry a date
 
   const classified = fresh.map(classify);
   stats.included = classified.length;
@@ -133,14 +114,23 @@ async function main(): Promise<void> {
   const freshNew = nearDedupe(ranked);
   const nearDupsRemoved = ranked.length - freshNew.length;
 
-  // ---- Rolling 7-day report cache ----
-  // Merge this run's new items with the previously cached items (pruned to the
-  // freshness window). The report always shows the best of the last 7 days and
-  // is never emptied just because a run found nothing new.
-  const prior = pruneByAge(await loadLatestItems(), config.freshnessDays);
+  // ---- Rolling report cache (item 2 + item 3) ----
+  // Two distinct concepts are kept separate here:
+  //   - `freshNew`   = articles discovered in THIS run (already <=freshnessDays
+  //                    old, enforced upstream by validateFreshness).
+  //   - `merged`     = ALL eligible articles from the extended rolling window
+  //                    (<=extendedWindowDays old), i.e. this run's new items
+  //                    PLUS every still-eligible item carried over from prior
+  //                    runs. This is the persisted cache the report is built
+  //                    from — an item is never dropped from it just because it
+  //                    was already seen in an earlier scan during the window.
+  // The report generator later derives the strict weekly (<=freshnessDays)
+  // section and the older "background" fallback section from this one cache.
+  const prior = pruneByAge(await loadLatestItems(), config.extendedWindowDays);
   const priorUrls = new Set(prior.map((i) => i.url));
-  const merged = mergeRolling(prior, freshNew, config.freshnessDays);
+  const merged = mergeRolling(prior, freshNew, config.extendedWindowDays);
   const newCount = merged.filter((i) => !priorUrls.has(i.url)).length;
+  const weeklyCount = merged.filter((i) => isWithinDays(i.publishedAt, config.freshnessDays)).length;
   const usedFallback = newCount === 0 && merged.length > 0;
 
   // Resolve Google News redirect links to real publisher URLs (better links +
@@ -184,6 +174,7 @@ async function main(): Promise<void> {
   log.step('SCAN — results per source');
   for (const s of allStats) {
     log.info(`Source [${s.tier}]: ${s.name}`);
+    log.info(`    Accessible:                 ${s.accessible ? 'yes' : `no — ${s.error}`}`);
     log.info(`    Links found:                ${s.found}`);
     log.info(`    Duplicates removed:         ${s.duplicates}`);
     log.info(`    Rejected static/directory:  ${s.rejectedStatic}`);
@@ -191,7 +182,9 @@ async function main(): Promise<void> {
     log.info(`    Rejected irrelevant:        ${s.rejectedIrrelevant}`);
     log.info(`    Rejected events/tours:      ${s.rejectedEvents}`);
     log.info(`    Rejected non-Israeli:       ${s.rejectedForeign}`);
-    log.info(`    Rejected too old/undated:   ${s.rejectedOld}`);
+    log.info(`    Dated candidates:           ${s.datedCandidates}`);
+    log.info(`    Rejected undated:           ${s.rejectedUndated}`);
+    log.info(`    Rejected too old:           ${s.rejectedOldDate}`);
     log.info(`    Included fresh articles:    ${s.included}`);
   }
 
@@ -204,12 +197,14 @@ async function main(): Promise<void> {
       rejectedIrrelevant: acc.rejectedIrrelevant + s.rejectedIrrelevant,
       rejectedEvents: acc.rejectedEvents + s.rejectedEvents,
       rejectedForeign: acc.rejectedForeign + s.rejectedForeign,
-      rejectedOld: acc.rejectedOld + s.rejectedOld,
+      rejectedUndated: acc.rejectedUndated + s.rejectedUndated,
+      rejectedOldDate: acc.rejectedOldDate + s.rejectedOldDate,
       included: acc.included + s.included,
     }),
     {
       found: 0, duplicates: 0, rejectedStatic: 0, keywordMatches: 0,
-      rejectedIrrelevant: 0, rejectedEvents: 0, rejectedForeign: 0, rejectedOld: 0, included: 0,
+      rejectedIrrelevant: 0, rejectedEvents: 0, rejectedForeign: 0,
+      rejectedUndated: 0, rejectedOldDate: 0, included: 0,
     },
   );
   log.step('SCAN — totals');
@@ -220,26 +215,30 @@ async function main(): Promise<void> {
   log.info(`Rejected irrelevant:        ${t.rejectedIrrelevant}`);
   log.info(`Rejected events/tours:      ${t.rejectedEvents}`);
   log.info(`Rejected non-Israeli:       ${t.rejectedForeign}`);
-  log.info(`Rejected too old/undated:   ${t.rejectedOld}`);
+  log.info(`Rejected undated:           ${t.rejectedUndated}`);
+  log.info(`Rejected too old:           ${t.rejectedOldDate}`);
   log.info(`New relevant articles:      ${freshNew.length}`);
 
   // ---- Rolling cache / fallback ----
-  log.step('SCAN — report cache (rolling 7 days)');
-  log.info(`New items found this run:    ${newCount}`);
-  log.info(`Cached items reused (≤7d):   ${merged.length - newCount}`);
-  log.info(`Total items in report:       ${merged.length}`);
+  log.step(`SCAN — report cache (rolling ${config.extendedWindowDays} days)`);
+  log.info(`New items found this run:              ${newCount}`);
+  log.info(`Cached items carried over from prior runs: ${merged.length - newCount}`);
+  log.info(`Total eligible items in extended cache:    ${merged.length}`);
+  log.info(`Of which within the ${config.freshnessDays}-day weekly window:    ${weeklyCount}`);
   if (usedFallback) {
-    log.warn('No new items this run — the weekly report will reuse the cached 7-day items (fallback).');
+    log.warn('No new items this run — the report will reuse the cached window items (fallback).');
   }
 
   if (merged.length) {
-    log.info('— items in report:');
+    log.info('— items in extended cache:');
     for (const i of merged.slice(0, 20)) {
       log.info(`    [${i.importance}] [${fmt(i.publishedAt)}] ${i.title} — ${i.source}`);
     }
   }
-  if (merged.length < 5) {
-    log.warn(`Only ${merged.length} relevant fresh items available (target is 5–15).`);
+  if (weeklyCount < config.minWeeklyItems) {
+    log.warn(
+      `Only ${weeklyCount} relevant items within the ${config.freshnessDays}-day weekly window (target is ${config.minWeeklyItems}+) — the "background updates" fallback section will be used.`,
+    );
   }
 
   log.step('SCAN — images (top stories)');
@@ -250,9 +249,14 @@ async function main(): Promise<void> {
   );
 
   await saveLatestItems(merged);
-  await saveScanMeta({ newItems: newCount, totalItems: merged.length, usedFallback });
+  await saveScanMeta({ newItems: newCount, totalItems: merged.length, weeklyItems: weeklyCount, usedFallback });
   await saveSeen(seen);
-  log.info(`Saved ${merged.length} items to data/latest-items.json (rolling 7-day cache).`);
+  log.info(`Saved ${merged.length} items to data/latest-items.json (rolling ${config.extendedWindowDays}-day cache, ${weeklyCount} within the ${config.freshnessDays}-day weekly window).`);
+
+  const audit = buildSourceAudit(allStats);
+  await saveSourceAudit(renderSourceAuditMarkdown(audit), renderSourceAuditHtml(audit));
+  log.info('Saved reports/source-audit-latest.md and reports/source-audit-latest.html.');
+
   log.step('SCAN — done');
 }
 
@@ -309,11 +313,14 @@ function detail(i: ClassifiedItem): number {
 }
 
 const DAY_MS = 24 * 60 * 60 * 1000;
-const CACHE_CAP = 40;
+// Cache spans config.extendedWindowDays (30d default) so the report generator
+// can build both the weekly (<=7d) section and the "background" fallback
+// section (7-30d) from one persisted cache without re-scanning.
+const CACHE_CAP = 90;
 
-/** Keep only items published within the freshness window (drops undated/old). */
+/** Keep only items published within the given window (drops undated/old). */
 function pruneByAge(items: ClassifiedItem[], days: number): ClassifiedItem[] {
-  const now = Date.now();
+  const now = nowMs();
   const maxAge = days * DAY_MS;
   return items.filter((i) => {
     if (!i.publishedAt) return false;
@@ -352,6 +359,14 @@ function rank(i: ClassifiedItem): number {
   const lvl = i.importance === 'High' ? 3000 : i.importance === 'Medium' ? 2000 : 1000;
   const recency = i.publishedAt ? Date.parse(i.publishedAt) / 1e10 : 0;
   return lvl + recency;
+}
+
+function isWithinDays(iso: string | undefined, days: number): boolean {
+  if (!iso) return false;
+  const ts = Date.parse(iso);
+  if (!Number.isFinite(ts)) return false;
+  const age = nowMs() - ts;
+  return age <= days * DAY_MS && age >= -DAY_MS;
 }
 
 function fmt(iso?: string): string {

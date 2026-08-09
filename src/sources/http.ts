@@ -121,6 +121,33 @@ export function extractPublishedDate($: cheerio.CheerioAPI, html: string): strin
   return undefined;
 }
 
+/**
+ * RSS/scrape boilerplate that leaks into summaries: feed-reader "read more"
+ * links, WordPress "the post first appeared on" footers, leftover HTML tags
+ * and entities, and truncation artifacts from clipped feed content.
+ */
+const BOILERPLATE_PATTERNS: RegExp[] = [
+  /\bread\s*more\b\.?/gi,
+  /\bcontinue\s*reading\b\.?/gi,
+  /המשך\s*לקרוא/g,
+  /קרא(י)?\s*עוד/g,
+  /הפוסט\s+.+?\s+הופיע\s+(ראשון|לראשונה)\s+ב-?.*/g,
+  /the\s+post\s+.+?\s+appeared\s+first\s+on\s+.*/gi,
+  /&hellip;|&nbsp;|&amp;|&quot;|&#\d+;/g,
+];
+
+/** Strip RSS/scrape boilerplate and leftover HTML from a summary. */
+export function sanitizeSummary(raw: string | undefined): string | undefined {
+  if (!raw) return undefined;
+  let s = raw.replace(/<[^>]+>/g, ' '); // leftover HTML tags
+  for (const re of BOILERPLATE_PATTERNS) s = s.replace(re, ' ');
+  s = s
+    .replace(/\[…\]|\[\.\.\.\]|\.\.\.$/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return s.length ? s : undefined;
+}
+
 /** Try a list of candidate feed URLs; return items from the first that works. */
 export async function tryRss(sourceName: string, urls: string[]): Promise<RawItem[]> {
   for (const url of urls) {
@@ -133,7 +160,7 @@ export async function tryRss(sourceName: string, urls: string[]): Promise<RawIte
           url: (i.link ?? '').trim(),
           source: sourceName,
           publishedAt: parseLooseDate(i.isoDate ?? i.pubDate),
-          summary: (i.contentSnippet ?? i.content ?? '').trim().slice(0, 500),
+          summary: sanitizeSummary((i.contentSnippet ?? i.content ?? '').slice(0, 500)),
         }));
       if (items.length) return items;
     } catch {
@@ -160,7 +187,7 @@ export async function fetchAllRss(sourceName: string, urls: string[]): Promise<R
           url: link,
           source: sourceName,
           publishedAt: parseLooseDate(i.isoDate ?? i.pubDate),
-          summary: (i.contentSnippet ?? i.content ?? '').trim().slice(0, 500),
+          summary: sanitizeSummary((i.contentSnippet ?? i.content ?? '').slice(0, 500)),
         });
       }
     } catch {
@@ -301,7 +328,7 @@ export async function enrichWithDate(item: RawItem): Promise<RawItem> {
       ...item,
       publishedAt,
       title: item.title || (ogTitle?.trim() ?? item.title),
-      summary: item.summary || (desc ? desc.trim().slice(0, 500) : undefined),
+      summary: item.summary || sanitizeSummary(desc?.slice(0, 500)),
     };
   } catch {
     return item; // no date -> will be rejected by the freshness step
