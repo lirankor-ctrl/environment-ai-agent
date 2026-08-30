@@ -1,5 +1,56 @@
 [
   {
+    "title": "חזית דרומית נגד זיהום נחל חברון: ראשי הרשויות דורשים פתרון לאומי",
+    "url": "https://br7news.co.il/he/news/news-1787750901",
+    "source": "חדשות באר שבע והנגב (Google News)",
+    "publishedAt": "2026-08-26T13:28:21.000Z",
+    "summary": "חזית דרומית נגד זיהום נחל חברון: ראשי הרשויות דורשים פתרון לאומי  חדשות באר שבע והנגב",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "High",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-08-30T09:49:01.095Z",
+    "imageUrl": "https://br7news.co.il/uploads/articles/horizontal_big/crop_1787750805_5f1bae4d7efa52bc20e9.webp",
+    "imageSource": "og:image"
+  },
+  {
+    "title": "2025: פחות אזהרות רחצה מזיהום אך יותר ימי סגירת חופים במצטבר",
+    "url": "https://infospot.co.il/n/beach_closures_pollution",
+    "source": "Infospot",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "summary": "העלייה במספר המצטבר של ימי אזהרת הרחצה נובעת בעיקר מזיהום ים בגלל זרימת נגר בעקבות גשמים. עם זאת, במשרד הבריאות לא מזהים מגמה עקבית ומדגישים שרוב אירועי הזיהום נובעים ממזג אוויר או תקלות לא צפויות",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "High",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-08-30T09:49:01.855Z",
+    "imageUrl": "https://infospot.co.il/Content/UserFiles/Upload/333344444.png",
+    "imageSource": "article-img"
+  },
+  {
+    "title": "3 עובדים נפצעו מפיצוץ במתקן טיפול בפסולת מסוכנת",
+    "url": "https://infospot.co.il/n/ecosol_plant_explosion",
+    "source": "Infospot",
+    "publishedAt": "2026-08-24T00:00:00.000Z",
+    "summary": "ביום ה' נפצעו 3 עובדים של מפעל אקוסול באופן בינוני וקשה, בעקבות פיצוץ של פסולת ביטחונית שמקורה במפעל מהצפון",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "High",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-08-30T09:49:01.855Z",
+    "imageUrl": "https://infospot.co.il/Content/UserFiles/Upload/333344444.png",
+    "imageSource": "article-img"
+  },
+  {
     "title": "\"ניסו לחסוך עמלות הטמנה\": 90 טון פסולת הוחרמו ביו\"ש",
     "url": "https://www.israelhayom.co.il/news/local/article/21244450",
     "source": "היום (Google News)",
@@ -71,6 +122,25 @@
     "imageSource": "og:image"
   },
   {
+    "title": "מפלסטיק לעוגייה: מדענים הצליחו להפוך פסולת לחטיף עתידני",
+    "url": "https://www.srugim.co.il/101009473-%D7%9E%D7%A4%D7%9C%D7%A1%D7%98%D7%99%D7%A7-%D7%9C%D7%A2%D7%95%D7%92%D7%99%D7%99%D7%94-%D7%9E%D7%93%D7%A2%D7%A0%D7%99%D7%9D-%D7%94%D7%A6%D7%9C%D7%99%D7%97%D7%95-%D7%9C%D7%94%D7%A4%D7%95%D7%9A",
+    "source": "סרוגים (Google News)",
+    "publishedAt": "2026-08-25T14:07:25.000Z",
+    "summary": "מפלסטיק לעוגייה: מדענים הצליחו להפוך פסולת לחטיף עתידני  סרוגים",
+    "query": "פסולת פלסטיק ישראל",
+    "matchedKeywords": [
+      "פסולת",
+      "פלסטיק"
+    ],
+    "categories": [
+      "ניהול פסולת",
+      "מחזור פלסטיק"
+    ],
+    "importance": "Medium",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
+  },
+  {
     "title": "העולם מתחמם והאש מתעצמת: עידן חדש של שרפות ענק",
     "url": "https://www.zavit.org.il/%d7%94%d7%a2%d7%95%d7%9c%d7%9d-%d7%9e%d7%aa%d7%97%d7%9e%d7%9d-%d7%95%d7%94%d7%90%d7%a9-%d7%9e%d7%aa%d7%a2%d7%a6%d7%9e%d7%aa-%d7%a2%d7%99%d7%93%d7%9f-%d7%97%d7%93%d7%a9-%d7%a9%d7%9c-%d7%a9%d7%a8%d7%a4/",
     "source": "זווית – סוכנות ידיעות למדע ולסביבה",
@@ -87,6 +157,104 @@
     "fetchedAt": "2026-08-23T04:39:15.319Z",
     "imageUrl": "https://www.zavit.org.il/wp-content/themes/Zavit/img/man1.png",
     "imageSource": "article-img"
+  },
+  {
+    "title": "הושגה שליטה על שריפה באתר פסולת ברחוב המלאכה בחיפה",
+    "url": "https://www.israelhayom.co.il/israelnow/article/21296188",
+    "source": "היום (Google News)",
+    "publishedAt": "2026-08-27T15:27:11.000Z",
+    "summary": "הושגה שליטה על שריפה באתר פסולת ברחוב המלאכה בחיפה  היום",
+    "query": "טיפול בפסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
+  },
+  {
+    "title": "אין ביטחון בעזה ללא טיפול בפסולת הבניין",
+    "url": "https://www.haaretz.co.il/blogs/mitvim/2026-08-27/ty-article-magazine/000001a0-1f6b-dd2f-a1b6-7febc2890000",
+    "source": "הארץ (Google News)",
+    "publishedAt": "2026-08-27T08:51:00.000Z",
+    "summary": "אין ביטחון בעזה ללא טיפול בפסולת הבניין  הארץ",
+    "query": "כלכלה מעגלית ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
+  },
+  {
+    "title": "גידי זאגא: הסביבה היא איום הייחוס החדש של ישראל",
+    "url": "https://www.zman.co.il/717286/",
+    "source": "זמן ישראל (Google News)",
+    "publishedAt": "2026-08-26T09:30:07.000Z",
+    "summary": "גידי זאגא: הסביבה היא איום הייחוס החדש של ישראל  זמן ישראל",
+    "query": "חוק הפיקדון ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "weak",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
+  },
+  {
+    "title": "אין חוסן לאומי בלי חוסן סביבתי",
+    "url": "https://shakuf.co.il/64521",
+    "source": "שקוף (Google News)",
+    "publishedAt": "2026-08-25T11:46:08.000Z",
+    "summary": "אין חוסן לאומי בלי חוסן סביבתי  שקוף",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "weak",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
+  },
+  {
+    "title": "בתוך \"גרוטאה\" עמוסת פסולת: זה מה שמצאו הבלשים",
+    "url": "https://www.emess.co.il/radio/1920516",
+    "source": "אמס (Google News)",
+    "publishedAt": "2026-08-25T07:33:35.000Z",
+    "summary": "בתוך \"גרוטאה\" עמוסת פסולת: זה מה שמצאו הבלשים  אמס",
+    "query": "טיפול בפסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
+  },
+  {
+    "title": "\"הלנה במקרר מסחרי ובאתר פסולת\": זו המציאות של העובדים הזרים בישראל",
+    "url": "https://www.ice.co.il/local-news/news/article/1126736",
+    "source": "ice (אייס) (Google News)",
+    "publishedAt": "2026-08-23T15:38:00.000Z",
+    "summary": "\"הלנה במקרר מסחרי ובאתר פסולת\": זו המציאות של העובדים הזרים בישראל  ice (אייס)",
+    "query": "טיפול בפסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-08-30T09:49:01.095Z"
   },
   {
     "title": "מה יש ומה אין ב\"תסקיר השפעה על הסביבה\"?",
@@ -151,23 +319,6 @@
     "importance": "Low",
     "relevanceTier": "weak",
     "fetchedAt": "2026-08-23T04:39:10.376Z"
-  },
-  {
-    "title": "שריפה פרצה באתר פסולת בצפון; מטוסי הכיבוי הוקפצו | תיעוד",
-    "url": "https://www.kikar.co.il/israel-news/tjyicn",
-    "source": "כיכר השבת (Google News)",
-    "publishedAt": "2026-08-18T08:55:31.000Z",
-    "summary": "שריפה פרצה באתר פסולת בצפון; מטוסי הכיבוי הוקפצו | תיעוד  כיכר השבת",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-08-23T04:39:10.375Z"
   },
   {
     "title": "הופכים אתגר סביבתי להזדמנות: הכירו כמה מהמיזמים שמשנים את הסביבה בישראל",
