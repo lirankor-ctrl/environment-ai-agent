@@ -1,5 +1,54 @@
 [
   {
+    "title": "מידרוג מותירה על כנו דירוג מנפיק A2.il לחברת ורידיס ומשנה את אופק הדירוג מיציב לחיובי",
+    "url": "https://www.funder.co.il/article/209252",
+    "source": "funder.co.il (Google News)",
+    "publishedAt": "2026-09-06T07:46:33.000Z",
+    "summary": "מידרוג מותירה על כנו דירוג מנפיק A2.il לחברת ורידיס ומשנה את אופק הדירוג מיציב לחיובי  funder.co.il",
+    "query": "מיחזור פסולת ישראל",
+    "matchedKeywords": [
+      "ורידיס"
+    ],
+    "categories": [
+      "חברות סביבה ישראליות"
+    ],
+    "importance": "High",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-09-06T08:27:04.888Z"
+  },
+  {
+    "title": "דו\"ח: ירידה של כ־70% בפליטות הגורמות לתחלואה מזיהום אוויר מ־2012",
+    "url": "https://www.haaretz.co.il/nature/2026-09-01/ty-article/.premium/000001a0-577b-d4eb-affc-5f7b77520000",
+    "source": "הארץ (Google News)",
+    "publishedAt": "2026-09-01T03:01:00.000Z",
+    "summary": "דו\"ח: ירידה של כ־70% בפליטות הגורמות לתחלואה מזיהום אוויר מ־2012  הארץ",
+    "query": "טיפול בפסולת ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "High",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-09-06T08:27:04.888Z",
+    "imageUrl": "https://img.haarets.co.il/bs/000001a0-577b-d4eb-affc-5f7b77520000/9c/65/963de9354caea5fdc685640d16fb/389047.jpg?&width=1200&height=630&cmsprod",
+    "imageSource": "og:image"
+  },
+  {
+    "title": "זהו המפעל המזהם ביותר בישראל: דו\"ח מרשם הפליטות ונתוני זיהום האוויר",
+    "url": "https://www.israelhayom.co.il/news/environment/article/21322207",
+    "source": "היום (Google News)",
+    "publishedAt": "2026-08-31T13:46:12.000Z",
+    "summary": "זהו המפעל המזהם ביותר בישראל: דו\"ח מרשם הפליטות ונתוני זיהום האוויר  היום",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "High",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-09-06T08:27:04.888Z"
+  },
+  {
     "title": "חזית דרומית נגד זיהום נחל חברון: ראשי הרשויות דורשים פתרון לאומי",
     "url": "https://br7news.co.il/he/news/news-1787750901",
     "source": "חדשות באר שבע והנגב (Google News)",
@@ -69,57 +118,22 @@
     "fetchedAt": "2026-08-23T04:39:10.375Z"
   },
   {
-    "title": "לראשונה בחולון: משאית הוחרמה לאחר שנתפסה משליכה פסולת בניין באופן בלתי חוקי",
-    "url": "https://www.news08.net/%D7%9C%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94-%D7%91%D7%97%D7%95%D7%9C%D7%95%D7%9F-%D7%9E%D7%A9%D7%90%D7%99%D7%AA-%D7%94%D7%95%D7%97%D7%A8%D7%9E%D7%94-%D7%9C%D7%90%D7%97%D7%A8-%D7%A9%D7%A0%D7%AA%D7%A4/",
-    "source": "חדשות אפס שמונה (Google News)",
-    "publishedAt": "2026-08-06T07:09:52.000Z",
-    "summary": "לראשונה בחולון: משאית הוחרמה לאחר שנתפסה משליכה פסולת בניין באופן בלתי חוקי  חדשות אפס שמונה",
-    "query": "פסולת בניין ישראל",
+    "title": "מענקים למחקר בתחום האנרגיה ומדעי האדמה והים והסביבה",
+    "url": "https://infospot.co.il/n/energy_environment_research_grants",
+    "source": "Infospot",
+    "publishedAt": "2026-08-31T00:00:00.000Z",
+    "summary": "משרד האנרגיה פרסם את הקול הקורא השנתי לתמיכה במחקרים בתחומי פעילותו, שכוללים בין היתר: הפחתת פליטות, טיפול בפסולת ושפכים, תחליפי דלקים, אנרגיה מתחדשת, ועוד",
     "matchedKeywords": [
       "פסולת",
-      "פסולת בניין"
+      "מחקר"
     ],
     "categories": [
-      "ניהול פסולת"
+      "ניהול פסולת",
+      "מחקרים ופיתוח"
     ],
-    "importance": "High",
-    "fetchedAt": "2026-08-09T05:07:37.437Z",
-    "imageUrl": "https://www.news08.net/wp-content/uploads/2026/08/11-159.jpeg",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "טרור סביבתי בלב המדינה: יער במרכז הארץ הפך למזבלה פיראטית",
-    "url": "https://www.israelhayom.co.il/news/environment/article/21118714",
-    "source": "israelhayom.co.il (Google News)",
-    "publishedAt": "2026-08-03T13:23:38.000Z",
-    "summary": "טרור סביבתי בלב המדינה: יער במרכז הארץ הפך למזבלה פיראטית  israelhayom.co.il",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "High",
-    "fetchedAt": "2026-08-09T05:07:37.436Z"
-  },
-  {
-    "title": "עלייה בנתוני המיחזור לשנת 2025 בנהריה: יותר מ-42 אלף טון פסולת!",
-    "url": "https://blinker.co.il/%D7%A6%D7%A4%D7%95%D7%9F-1-%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%A0%D7%94%D7%A8%D7%99%D7%94/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%91%D7%A6%D7%A4%D7%95%D7%9F-1-%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%A0%D7%94%D7%A8%D7%99%D7%94/%D7%A2%D7%9C%D7%99%D7%99%D7%94-%D7%91%D7%A0%D7%AA%D7%95%D7%A0%D7%99-%D7%94%D7%9E%D7%99%D7%97%D7%96%D7%95%D7%A8-%D7%9C%D7%A9%D7%A0%D7%AA-2025-%D7%91%D7%A0%D7%94%D7%A8%D7%99%D7%94-%D7%99%D7%95%D7%AA/500200/",
-    "source": "בלינקר (Google News)",
-    "publishedAt": "2026-08-02T12:21:14.000Z",
-    "summary": "עלייה בנתוני המיחזור לשנת 2025 בנהריה: יותר מ-42 אלף טון פסולת!  בלינקר",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [
-      "מיחזור",
-      "פסולת"
-    ],
-    "categories": [
-      "מחזור",
-      "ניהול פסולת"
-    ],
-    "importance": "High",
-    "fetchedAt": "2026-08-09T05:07:37.436Z",
-    "imageUrl": "https://blinker.co.il/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-02-at-08.42.20-618x387.jpeg",
-    "imageSource": "og:image"
+    "importance": "Medium",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-09-06T08:27:05.916Z"
   },
   {
     "title": "מפלסטיק לעוגייה: מדענים הצליחו להפוך פסולת לחטיף עתידני",
@@ -157,6 +171,86 @@
     "fetchedAt": "2026-08-23T04:39:15.319Z",
     "imageUrl": "https://www.zavit.org.il/wp-content/themes/Zavit/img/man1.png",
     "imageSource": "article-img"
+  },
+  {
+    "title": "נער ישראלי נגד פסולת במסלול: השבוע בחלל",
+    "url": "https://www.ynet.co.il/environment-science/article/skjskzpozg",
+    "source": "ynet.co.il (Google News)",
+    "publishedAt": "2026-09-04T03:57:26.000Z",
+    "summary": "נער ישראלי נגד פסולת במסלול: השבוע בחלל  ynet.co.il",
+    "query": "מיחזור פסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-09-06T08:27:04.888Z"
+  },
+  {
+    "title": "שיטפון בנפאל ואירועי גשם חריגים בישראל",
+    "url": "https://www.zavit.org.il/%d7%a9%d7%99%d7%98%d7%a4%d7%95%d7%9f-%d7%91%d7%a0%d7%a4%d7%90%d7%9c-%d7%95%d7%90%d7%99%d7%a8%d7%95%d7%a2%d7%99-%d7%92%d7%a9%d7%9d-%d7%97%d7%a8%d7%99%d7%92%d7%99%d7%9d-%d7%91%d7%99%d7%a9%d7%a8%d7%90/",
+    "source": "זווית – סוכנות ידיעות למדע ולסביבה",
+    "publishedAt": "2026-09-03T13:53:59.000Z",
+    "summary": "אירועי גשם קצרים וחזקים נעשים שכיחים יותר. שינוי האקלים ותכנון מיושן מגבירים את הסיכון להצפות ולשיטפונות ..",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "weak",
+    "fetchedAt": "2026-09-06T08:27:09.340Z"
+  },
+  {
+    "title": "חדרה, חיפה ואשדוד בראש: מוקדי הזיהום הבולטים בישראל",
+    "url": "https://www.maariv.co.il/news/environment/article-1361814",
+    "source": "maariv.co.il (Google News)",
+    "publishedAt": "2026-09-01T06:15:47.000Z",
+    "summary": "חדרה, חיפה ואשדוד בראש: מוקדי הזיהום הבולטים בישראל  maariv.co.il",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-09-06T08:27:04.888Z"
+  },
+  {
+    "title": "כתבי הסביבה נגד השרה עידית סילמן: כינסה מסיבת עיתונאים בלי למסור את הנתונים המביכים",
+    "url": "https://www.the7eye.org.il/593533",
+    "source": "העין השביעית (Google News)",
+    "publishedAt": "2026-08-30T11:52:58.000Z",
+    "summary": "כתבי הסביבה נגד השרה עידית סילמן: כינסה מסיבת עיתונאים בלי למסור את הנתונים המביכים  העין השביעית",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "weak",
+    "fetchedAt": "2026-09-06T08:27:04.888Z"
+  },
+  {
+    "title": "חדשות ועדכונים - הסדרי פסולת אלקטרונית לקראת ראש השנה",
+    "url": "https://www.holon.muni.il/Lists/List2/CustomDispForm.aspx?ID",
+    "source": "עיריית חולון (Google News)",
+    "publishedAt": "2026-08-30T10:09:04.000Z",
+    "summary": "חדשות ועדכונים - הסדרי פסולת אלקטרונית לקראת ראש השנה  עיריית חולון",
+    "query": "פסולת אלקטרונית ישראל",
+    "matchedKeywords": [
+      "פסולת",
+      "פסולת אלקטרונית"
+    ],
+    "categories": [
+      "ניהול פסולת",
+      "פסולת אלקטרונית"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-09-06T08:27:04.888Z"
   },
   {
     "title": "הושגה שליטה על שריפה באתר פסולת ברחוב המלאכה בחיפה",
@@ -545,131 +639,5 @@
     "fetchedAt": "2026-08-09T05:07:37.437Z",
     "imageUrl": "http://www.news-israel.net/wp-content/uploads/2026/08/IMG_1978.jpeg",
     "imageSource": "og:image"
-  },
-  {
-    "title": "האטרקציה החשמלית של הקיץ, הקרנבל הסביבתי של תאגיד מא\"י הגיע לנתניה",
-    "url": "https://newzim.co.il/sharon/?p",
-    "source": "newzim.co.il (Google News)",
-    "publishedAt": "2026-08-06T08:06:43.000Z",
-    "summary": "האטרקציה החשמלית של הקיץ, הקרנבל הסביבתי של תאגיד מא\"י הגיע לנתניה  newzim.co.il",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.436Z"
-  },
-  {
-    "title": "מפעל המיחזור הגיע לנתניה: חוויה סביבתית לכל המשפחה",
-    "url": "https://www.netanyanet.co.il/%D7%A4%D7%A0%D7%90%D7%99-%D7%A0%D7%AA%D7%A0%D7%99%D7%94/%D7%99%D7%9C%D7%93%D7%99%D7%9D/%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%99%D7%95%D7%AA-%D7%9C%D7%99%D7%9C%D7%93%D7%99%D7%9D/17634-%D7%9E%D7%99%D7%97%D7%96%D7%95%D7%A8-%D7%A0%D7%AA%D7%A0%D7%99%D7%94",
-    "source": "נתניה נט (Google News)",
-    "publishedAt": "2026-08-06T03:03:13.000Z",
-    "summary": "מפעל המיחזור הגיע לנתניה: חוויה סביבתית לכל המשפחה  נתניה נט",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [
-      "מיחזור"
-    ],
-    "categories": [
-      "מחזור"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.436Z",
-    "imageUrl": "https://www.netanyanet.co.il/images/kids/mihzur1.jpg",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "ישראל בדרך למשבר פסולת לאומי: האם האשפה תיערם ברחובות?",
-    "url": "https://www.calcalist.co.il/local_news/article/s1ruftx8fl",
-    "source": "Calcalist (Google News)",
-    "publishedAt": "2026-08-05T10:08:00.000Z",
-    "summary": "ישראל בדרך למשבר פסולת לאומי: האם האשפה תיערם ברחובות?  Calcalist",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.436Z"
-  },
-  {
-    "title": "האוצר והמשרד להגנת הסביבה מתקוטטים - והפסולת ממשיכה להיערם",
-    "url": "https://www.calcalist.co.il/local_news/article/bjop009kufx",
-    "source": "Calcalist (Google News)",
-    "publishedAt": "2026-08-05T03:10:00.000Z",
-    "summary": "האוצר והמשרד להגנת הסביבה מתקוטטים - והפסולת ממשיכה להיערם  Calcalist",
-    "query": "מחזור פסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.436Z"
-  },
-  {
-    "title": "בנק מזרחי טפחות נכנס לתחום פינוי פסולת - בהשקעה של 99 מיליון שקל | יהודה שרוני",
-    "url": "https://www.maariv.co.il/economy/israel/article-1352317",
-    "source": "מעריב (Google News)",
-    "publishedAt": "2026-08-05T03:00:57.000Z",
-    "summary": "בנק מזרחי טפחות נכנס לתחום פינוי פסולת - בהשקעה של 99 מיליון שקל | יהודה שרוני  מעריב",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.436Z"
-  },
-  {
-    "title": "המזגן של העתיד: בלי גזי חממה ובלי לחמם את הרחוב",
-    "url": "https://www.zavit.org.il/%d7%94%d7%9e%d7%96%d7%92%d7%9f-%d7%a9%d7%9c-%d7%94%d7%a2%d7%aa%d7%99%d7%93-%d7%91%d7%9c%d7%99-%d7%92%d7%96%d7%99-%d7%97%d7%9e%d7%9e%d7%94-%d7%95%d7%91%d7%9c%d7%99-%d7%9c%d7%97%d7%9e%d7%9d-%d7%90/",
-    "source": "זווית – סוכנות ידיעות למדע ולסביבה",
-    "publishedAt": "2026-08-04T13:37:09.000Z",
-    "summary": "בעוד שבישראל בכ-94 אחוז ממשקי הבית יש מזגן, באירופה מדובר היום בכ-20 אחוז בלבד; אך גלי החום הרבים מאלצים את האירופים להתחיל להדביק את הקצב. איך זה עלול להשפיע על הסביבה, ומה החלופות? [...]\nRead More...\nהפוסט המזגן של העתיד: בלי גזי חממה ובלי לחמם את הרחוב הופיע ראשון בזווית | סוכנות ידיעות למדע ולסביבה",
-    "matchedKeywords": [],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:42.201Z"
-  },
-  {
-    "title": "המדינה בדרך להאריך את המונופול של תאגיד מיחזור האריזות",
-    "url": "https://www.themarker.com/consumer/2026-08-04/ty-article/.premium/0000019f-b285-da04-a7ff-bb85390e0000",
-    "source": "TheMarker (Google News)",
-    "publishedAt": "2026-08-04T03:00:00.000Z",
-    "summary": "המדינה בדרך להאריך את המונופול של תאגיד מיחזור האריזות  TheMarker",
-    "query": "מחזור פסולת ישראל",
-    "matchedKeywords": [
-      "מיחזור"
-    ],
-    "categories": [
-      "מחזור",
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.436Z"
-  },
-  {
-    "title": "מתיחת פנים לצומת העמוס בדרום: עשרות משאיות פינו פסולת ממתחם בית קמה -",
-    "url": "https://www.b7net.co.il/mobile/%D7%97%D7%93%D7%A9%D7%95%D7%AA/%D7%9E%D7%AA%D7%99%D7%97%D7%AA-%D7%A4%D7%A0%D7%99%D7%9D-%D7%9C%D7%A6%D7%95%D7%9E%D7%AA-%D7%94%D7%A2%D7%9E%D7%95%D7%A1-%D7%91%D7%93%D7%A8%D7%95%D7%9D-%D7%A2%D7%A9%D7%A8%D7%95%D7%AA-%D7%9E%D7%A9%D7%90%D7%99%D7%95%D7%AA-%D7%A4%D7%99%D7%A0%D7%95-%D7%A4%D7%A1%D7%95%D7%9C%D7%AA-%D7%9E%D7%9E%D7%AA%D7%97%D7%9D-%D7%91%D7%99%D7%AA-%D7%A7%D7%9E%D7%94-799118",
-    "source": "באר שבע נט (Google News)",
-    "publishedAt": "2026-08-02T11:20:06.000Z",
-    "summary": "מתיחת פנים לצומת העמוס בדרום: עשרות משאיות פינו פסולת ממתחם בית קמה -  באר שבע נט",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "fetchedAt": "2026-08-09T05:07:37.437Z"
   }
 ]
