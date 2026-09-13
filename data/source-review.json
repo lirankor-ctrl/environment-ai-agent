@@ -1,22 +1,38 @@
 {
-  "date": "2026-09-06",
+  "date": "2026-09-13",
   "recommendedNew": [
+    {
+      "name": "ביזפורטל",
+      "domain": "bizportal.co.il",
+      "url": "https://bizportal.co.il/",
+      "sampleUrl": "https://www.bizportal.co.il/realestates/news/article/20038360",
+      "score": 8,
+      "totalCount": 3,
+      "relevantCount": 3,
+      "datedCount": 3,
+      "access": {
+        "rss": false,
+        "html": true
+      },
+      "verdict": "ADD",
+      "reason": "3/3 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 8/10"
+    },
     {
       "name": "שקוף",
       "domain": "shakuf.co.il",
       "url": "https://shakuf.co.il/",
-      "sampleUrl": "https://shakuf.co.il/64331",
-      "score": 9,
-      "totalCount": 3,
-      "relevantCount": 3,
-      "datedCount": 3,
+      "sampleUrl": "https://shakuf.co.il/64521",
+      "score": 8,
+      "totalCount": 2,
+      "relevantCount": 2,
+      "datedCount": 2,
       "access": {
         "rss": true,
         "rssUrl": "https://shakuf.co.il/feed",
         "html": true
       },
       "verdict": "ADD",
-      "reason": "3/3 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 9/10"
+      "reason": "2/2 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
     },
     {
       "name": "הארץ",
@@ -24,219 +40,155 @@
       "url": "https://haaretz.co.il/",
       "sampleUrl": "https://www.haaretz.co.il/news/magazine/2026-08-31/ty-article-magazine/.premium/000001a0-4263-d274-a7f4-f6e370520000",
       "score": 7,
-      "totalCount": 7,
+      "totalCount": 6,
       "relevantCount": 4,
-      "datedCount": 7,
+      "datedCount": 6,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "ADD",
-      "reason": "4/7 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 7/10"
+      "reason": "4/6 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 7/10"
     }
   ],
   "underObservation": [
     {
-      "name": "וואלה חדשות",
-      "domain": "news.walla.co.il",
-      "url": "https://news.walla.co.il/",
-      "sampleUrl": "https://news.walla.co.il/item/3861622",
-      "score": 7,
-      "totalCount": 1,
-      "relevantCount": 1,
-      "datedCount": 1,
+      "name": "YNET",
+      "domain": "ynet.co.il",
+      "url": "https://ynet.co.il/",
+      "sampleUrl": "https://www.ynet.co.il/judaism/discourse/article/bjjo305pfe",
+      "score": 6,
+      "totalCount": 16,
+      "relevantCount": 3,
+      "datedCount": 16,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 7/10"
+      "reason": "3/16 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
     },
     {
-      "name": "ice.co.il",
+      "name": "ice (אייס)",
       "domain": "ice.co.il",
       "url": "https://ice.co.il/",
       "sampleUrl": "https://www.ice.co.il/realestate/news/article/1126876",
       "score": 6,
-      "totalCount": 6,
+      "totalCount": 7,
       "relevantCount": 1,
-      "datedCount": 6,
+      "datedCount": 7,
       "access": {
         "rss": true,
         "rssUrl": "https://ice.co.il/rss",
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "1/6 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
+      "reason": "1/7 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
     },
     {
-      "name": "ynet.co.il",
-      "domain": "ynet.co.il",
-      "url": "https://ynet.co.il/",
-      "sampleUrl": "https://www.ynet.co.il/sport/israelisoccer/article/skuspspdml",
+      "name": "News1 מחלקה ראשונה",
+      "domain": "news1.co.il",
+      "url": "https://news1.co.il/",
+      "sampleUrl": "https://www.news1.co.il/Archive/001-D-523445-00.html",
       "score": 6,
-      "totalCount": 19,
-      "relevantCount": 7,
-      "datedCount": 19,
+      "totalCount": 1,
+      "relevantCount": 1,
+      "datedCount": 1,
+      "access": {
+        "rss": false,
+        "html": false
+      },
+      "verdict": "OBSERVE",
+      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "name": "גלובס",
+      "domain": "globes.co.il",
+      "url": "https://globes.co.il/",
+      "sampleUrl": "https://www.globes.co.il/news/article.aspx?did",
+      "score": 5,
+      "totalCount": 3,
+      "relevantCount": 1,
+      "datedCount": 3,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "7/19 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+      "reason": "1/3 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
     },
     {
-      "name": "רדיו גלי ישראל",
-      "domain": "gly.co.il",
-      "url": "https://gly.co.il/",
-      "sampleUrl": "https://www.gly.co.il/item?id",
-      "score": 6,
-      "totalCount": 1,
+      "name": "מעריב",
+      "domain": "maariv.co.il",
+      "url": "https://maariv.co.il/",
+      "sampleUrl": "https://www.maariv.co.il/lifestyle/signon-maariv/article-1357130",
+      "score": 5,
+      "totalCount": 6,
       "relevantCount": 1,
-      "datedCount": 1,
+      "datedCount": 6,
       "access": {
         "rss": false,
-        "html": false
+        "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
-    },
-    {
-      "name": "זמן ישראל",
-      "domain": "zman.co.il",
-      "url": "https://zman.co.il/",
-      "sampleUrl": "https://www.zman.co.il/717286/",
-      "score": 6,
-      "totalCount": 1,
-      "relevantCount": 1,
-      "datedCount": 1,
-      "access": {
-        "rss": false,
-        "html": false
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+      "reason": "1/6 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
     },
     {
       "name": "היום",
       "domain": "israelhayom.co.il",
       "url": "https://israelhayom.co.il/",
-      "sampleUrl": "https://www.israelhayom.co.il/news/world-news/europe/article/21198884",
-      "score": 5,
-      "totalCount": 43,
-      "relevantCount": 6,
-      "datedCount": 43,
-      "access": {
-        "rss": false,
-        "html": false
-      },
-      "verdict": "OBSERVE",
-      "reason": "6/43 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 5/10"
-    },
-    {
-      "name": "TheMarker",
-      "domain": "themarker.com",
-      "url": "https://themarker.com/",
-      "sampleUrl": "https://www.themarker.com/markets/2026-09-01/ty-article/.premium/000001a0-5db9-d9b7-abaf-fffff9d40000",
-      "score": 5,
-      "totalCount": 5,
-      "relevantCount": 1,
-      "datedCount": 5,
-      "access": {
-        "rss": false,
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/5 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
-    },
-    {
-      "name": "Calcalist",
-      "domain": "calcalist.co.il",
-      "url": "https://calcalist.co.il/",
-      "sampleUrl": "https://www.calcalist.co.il/market/article/cisz5vqbi",
-      "score": 5,
-      "totalCount": 9,
-      "relevantCount": 1,
-      "datedCount": 9,
-      "access": {
-        "rss": false,
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/9 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
-    },
-    {
-      "name": "ביזפורטל",
-      "domain": "bizportal.co.il",
-      "url": "https://bizportal.co.il/",
-      "sampleUrl": "https://www.bizportal.co.il/realestates/news/article/20038360",
+      "sampleUrl": "https://www.israelhayom.co.il/news/local/article/21388471",
       "score": 4,
-      "totalCount": 2,
-      "relevantCount": 1,
-      "datedCount": 2,
+      "totalCount": 23,
+      "relevantCount": 2,
+      "datedCount": 23,
       "access": {
         "rss": false,
         "html": false
       },
       "verdict": "OBSERVE",
-      "reason": "1/2 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
-    },
-    {
-      "name": "maariv.co.il",
-      "domain": "maariv.co.il",
-      "url": "https://maariv.co.il/",
-      "sampleUrl": "https://www.maariv.co.il/news/law/article-1360135",
-      "score": 4,
-      "totalCount": 7,
-      "relevantCount": 1,
-      "datedCount": 7,
-      "access": {
-        "rss": false,
-        "html": false
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/7 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
+      "reason": "2/23 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
     }
   ],
   "existing": [
     {
       "id": "google-news",
       "name": "Google News (חיפוש מילות מפתח)",
-      "scannedCount": 30,
-      "relevantArticles": 13,
-      "usefulCount": 13,
-      "irrelevantCount": 17,
-      "freshCount": 30,
-      "relevanceScore": 4,
+      "scannedCount": 33,
+      "relevantArticles": 17,
+      "usefulCount": 17,
+      "irrelevantCount": 16,
+      "freshCount": 33,
+      "relevanceScore": 5,
       "reliabilityScore": 8,
       "recommendation": "KEEP",
-      "notes": "13 שימושיים · 17 לא רלוונטיים · 30 טריים (30 ימים) · אמינות 8/10"
+      "notes": "17 שימושיים · 16 לא רלוונטיים · 33 טריים (30 ימים) · אמינות 8/10"
     },
     {
       "id": "infospot",
       "name": "Infospot",
       "scannedCount": 20,
-      "relevantArticles": 14,
-      "usefulCount": 12,
-      "irrelevantCount": 6,
+      "relevantArticles": 11,
+      "usefulCount": 9,
+      "irrelevantCount": 9,
       "freshCount": 16,
-      "relevanceScore": 7,
+      "relevanceScore": 6,
       "reliabilityScore": 8,
       "recommendation": "KEEP",
-      "notes": "12 שימושיים · 6 לא רלוונטיים · 16 טריים (30 ימים) · אמינות 8/10"
+      "notes": "9 שימושיים · 9 לא רלוונטיים · 16 טריים (30 ימים) · אמינות 8/10"
     },
     {
       "id": "zavit",
       "name": "זווית – סוכנות ידיעות למדע ולסביבה",
       "scannedCount": 100,
-      "relevantArticles": 34,
-      "usefulCount": 5,
-      "irrelevantCount": 66,
-      "freshCount": 12,
+      "relevantArticles": 33,
+      "usefulCount": 7,
+      "irrelevantCount": 67,
+      "freshCount": 16,
       "relevanceScore": 3,
       "reliabilityScore": 6,
       "recommendation": "KEEP",
-      "notes": "5 שימושיים · 66 לא רלוונטיים · 12 טריים (30 ימים) · אמינות 6/10"
+      "notes": "7 שימושיים · 67 לא רלוונטיים · 16 טריים (30 ימים) · אמינות 6/10"
     },
     {
       "id": "isees",
@@ -254,6 +206,7 @@
   ],
   "approval": {
     "add": [
+      "bizportal.co.il",
       "shakuf.co.il",
       "haaretz.co.il"
     ],
