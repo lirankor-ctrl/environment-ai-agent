@@ -865,6 +865,132 @@
       "recommendation": "REMOVE",
       "approvalStatus": "pending",
       "notes": "המקור לא הגיב בהרצה זו (כשל איסוף)."
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "הארץ",
+      "url": "https://haaretz.co.il/",
+      "score": 7,
+      "recommendation": "ADD",
+      "approvalStatus": "pending",
+      "notes": "4/9 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 7/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "שקוף",
+      "url": "https://shakuf.co.il/",
+      "score": 8,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "ynet.co.il",
+      "url": "https://ynet.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "7/24 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "ice (אייס)",
+      "url": "https://ice.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/5 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "zman.co.il",
+      "url": "https://zman.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "ביזפורטל",
+      "url": "https://bizportal.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/2 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "היום",
+      "url": "https://israelhayom.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "5/29 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 5/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "מעריב",
+      "url": "https://maariv.co.il/",
+      "score": 4,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/3 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "new",
+      "name": "News1 מחלקה ראשונה",
+      "url": "https://news1.co.il/",
+      "score": 4,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/2 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "existing",
+      "name": "Google News (חיפוש מילות מפתח)",
+      "score": 8,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "19 שימושיים · 18 לא רלוונטיים · 37 טריים (30 ימים) · אמינות 8/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "existing",
+      "name": "Infospot",
+      "score": 8,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "8 שימושיים · 9 לא רלוונטיים · 17 טריים (30 ימים) · אמינות 8/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "existing",
+      "name": "זווית – סוכנות ידיעות למדע ולסביבה",
+      "score": 6,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "4 שימושיים · 66 לא רלוונטיים · 14 טריים (30 ימים) · אמינות 6/10"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "existing",
+      "name": "מגזין אקולוגיה וסביבה (ISEES)",
+      "score": 1,
+      "recommendation": "REMOVE",
+      "approvalStatus": "pending",
+      "notes": "המקור לא הגיב בהרצה זו (כשל איסוף)."
     }
   ]
 }
