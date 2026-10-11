@@ -1,6 +1,24 @@
 {
-  "date": "2026-10-04",
-  "recommendedNew": [],
+  "date": "2026-10-11",
+  "recommendedNew": [
+    {
+      "name": "שקוף",
+      "domain": "shakuf.co.il",
+      "url": "https://shakuf.co.il/",
+      "sampleUrl": "https://shakuf.co.il/64947",
+      "score": 9,
+      "totalCount": 3,
+      "relevantCount": 3,
+      "datedCount": 3,
+      "access": {
+        "rss": true,
+        "rssUrl": "https://shakuf.co.il/feed",
+        "html": false
+      },
+      "verdict": "ADD",
+      "reason": "3/3 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 9/10"
+    }
+  ],
   "underObservation": [
     {
       "name": "אנשים ומחשבים",
@@ -20,61 +38,10 @@
       "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
     },
     {
-      "name": "blinker.co.il",
-      "domain": "blinker.co.il",
-      "url": "https://blinker.co.il/",
-      "sampleUrl": "https://blinker.co.il/%D7%99%D7%93%D7%99%D7%A2%D7%95%D7%AA-%D7%94%D7%92%D7%9C%D7%99%D7%9C-%D7%95%D7%99%D7%93%D7%99%D7%A2%D7%95%D7%AA-%D7%A2%D7%A4%D7%95%D7%9C%D7%94-%D7%95%D7%94%D7%A2%D7%9E%D7%A7%D7%99%D7%9D/%D7%97%D7%93%D7%A9%D7%95%D7%AA-%D7%91%D7%99%D7%93%D7%99%D7%A2%D7%95%D7%AA-%D7%94%D7%92%D7%9C%D7%99%D7%9C-%D7%95%D7%99%D7%93%D7%99%D7%A2%D7%95%D7%AA-%D7%A2%D7%A4%D7%95%D7%9C%D7%94-%D7%95%D7%94%D7%A2/%D7%99%D7%95%D7%9D-%D7%94%D7%9B%D7%99%D7%A4%D7%95%D7%A8%D7%99%D7%9D-%D7%AA%D7%A9%D7%A4%D7%96-%D7%9B%D7%A9%D7%94%D7%AA%D7%97%D7%91%D7%95%D7%A8%D7%94-%D7%A2%D7%95%D7%A6%D7%A8%D7%AA-%D7%96%D7%99/505426/",
-      "score": 8,
-      "totalCount": 1,
-      "relevantCount": 1,
-      "datedCount": 1,
-      "access": {
-        "rss": true,
-        "rssUrl": "https://blinker.co.il/feed",
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
-    },
-    {
-      "name": "NWS חדשות חיפה והסביבה",
-      "domain": "nws.report",
-      "url": "https://nws.report/",
-      "sampleUrl": "https://nws.report/health-and-environment/154201/",
-      "score": 8,
-      "totalCount": 1,
-      "relevantCount": 1,
-      "datedCount": 1,
-      "access": {
-        "rss": true,
-        "rssUrl": "https://nws.report/feed",
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
-    },
-    {
-      "name": "חדשות אפס שמונה",
-      "domain": "news08.net",
-      "url": "https://news08.net/",
-      "sampleUrl": "https://www.news08.net/%D7%90%D7%A7%D7%9C%D7%99%D7%9D-%D7%95%D7%AA%D7%97%D7%96%D7%95%D7%A7%D7%AA-%D7%9E%D7%91%D7%A0%D7%99%D7%9D-%D7%94%D7%AA%D7%9E%D7%95%D7%93%D7%93%D7%95%D7%AA-%D7%A2%D7%9D-%D7%A4%D7%92%D7%A2%D7%99-%D7%9E/",
-      "score": 8,
-      "totalCount": 1,
-      "relevantCount": 1,
-      "datedCount": 1,
-      "access": {
-        "rss": true,
-        "rssUrl": "https://news08.net/feed",
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
-    },
-    {
       "name": "YNET",
       "domain": "ynet.co.il",
       "url": "https://ynet.co.il/",
-      "sampleUrl": "https://www.ynet.co.il/judaism/discourse/article/bjjo305pfe",
+      "sampleUrl": "https://www.ynet.co.il/environment-science/article/s1jiuodkfl",
       "score": 6,
       "totalCount": 19,
       "relevantCount": 6,
@@ -92,55 +59,69 @@
       "url": "https://haaretz.co.il/",
       "sampleUrl": "https://www.haaretz.co.il/sport/other/2026-09-16/ty-article/000001a0-ab1e-dea8-afe0-ebbef2360000",
       "score": 6,
+      "totalCount": 7,
+      "relevantCount": 3,
+      "datedCount": 7,
+      "access": {
+        "rss": false,
+        "html": true
+      },
+      "verdict": "OBSERVE",
+      "reason": "3/7 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+    },
+    {
+      "name": "חדשות חיפה",
+      "domain": "haipo.co.il",
+      "url": "https://haipo.co.il/",
+      "sampleUrl": "https://haipo.co.il/item/648271",
+      "score": 6,
+      "totalCount": 5,
+      "relevantCount": 4,
+      "datedCount": 5,
+      "access": {
+        "rss": false,
+        "html": false
+      },
+      "verdict": "OBSERVE",
+      "reason": "4/5 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "name": "calcalist",
+      "domain": "calcalist.co.il",
+      "url": "https://calcalist.co.il/",
+      "sampleUrl": "https://www.calcalist.co.il/local_news/article/hj7rsleoze",
+      "score": 5,
+      "totalCount": 8,
+      "relevantCount": 1,
+      "datedCount": 8,
+      "access": {
+        "rss": false,
+        "html": true
+      },
+      "verdict": "OBSERVE",
+      "reason": "1/8 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "name": "ביזפורטל",
+      "domain": "bizportal.co.il",
+      "url": "https://bizportal.co.il/",
+      "sampleUrl": "https://www.bizportal.co.il/financialconsumerism/news/article/20044284",
+      "score": 5,
       "totalCount": 3,
-      "relevantCount": 2,
+      "relevantCount": 1,
       "datedCount": 3,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "2/3 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+      "reason": "1/3 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
     },
     {
-      "name": "ice (אייס)",
-      "domain": "ice.co.il",
-      "url": "https://ice.co.il/",
-      "sampleUrl": "https://www.ice.co.il/finance/news/article/1130900",
-      "score": 6,
-      "totalCount": 7,
-      "relevantCount": 1,
-      "datedCount": 7,
-      "access": {
-        "rss": true,
-        "rssUrl": "https://ice.co.il/rss",
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/7 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
-    },
-    {
-      "name": "אמס",
-      "domain": "emess.co.il",
-      "url": "https://emess.co.il/",
-      "sampleUrl": "https://www.emess.co.il/radio/1933463",
-      "score": 6,
-      "totalCount": 6,
-      "relevantCount": 1,
-      "datedCount": 6,
-      "access": {
-        "rss": true,
-        "rssUrl": "https://emess.co.il/feed",
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/6 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
-    },
-    {
-      "name": "calcalist",
-      "domain": "calcalist.co.il",
-      "url": "https://calcalist.co.il/",
-      "sampleUrl": "https://www.calcalist.co.il/style/article/bjxx11fr5ze",
+      "name": "וואלה",
+      "domain": "walla.co.il",
+      "url": "https://walla.co.il/",
+      "sampleUrl": "https://www.walla.co.il/news/israel/383956149",
       "score": 5,
       "totalCount": 10,
       "relevantCount": 1,
@@ -153,77 +134,61 @@
       "reason": "1/10 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
     },
     {
-      "name": "ביזפורטל",
-      "domain": "bizportal.co.il",
-      "url": "https://bizportal.co.il/",
-      "sampleUrl": "https://www.bizportal.co.il/financialconsumerism/news/article/20042388",
-      "score": 5,
-      "totalCount": 4,
+      "name": "היום",
+      "domain": "israelhayom.co.il",
+      "url": "https://israelhayom.co.il/",
+      "sampleUrl": "https://www.israelhayom.co.il/news/education/article/21432656",
+      "score": 4,
+      "totalCount": 20,
       "relevantCount": 1,
-      "datedCount": 4,
+      "datedCount": 20,
       "access": {
         "rss": false,
-        "html": true
+        "html": false
       },
       "verdict": "OBSERVE",
-      "reason": "1/4 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
-    },
-    {
-      "name": "וואלה",
-      "domain": "walla.co.il",
-      "url": "https://walla.co.il/",
-      "sampleUrl": "https://www.walla.co.il/news/israel/383956149",
-      "score": 5,
-      "totalCount": 7,
-      "relevantCount": 1,
-      "datedCount": 7,
-      "access": {
-        "rss": false,
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/7 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+      "reason": "1/20 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
     }
   ],
   "existing": [
     {
       "id": "google-news",
       "name": "Google News (חיפוש מילות מפתח)",
-      "scannedCount": 21,
-      "relevantArticles": 7,
-      "usefulCount": 7,
-      "irrelevantCount": 14,
-      "freshCount": 21,
-      "relevanceScore": 3,
-      "reliabilityScore": 7,
+      "scannedCount": 39,
+      "relevantArticles": 18,
+      "usefulCount": 18,
+      "irrelevantCount": 21,
+      "freshCount": 39,
+      "relevanceScore": 5,
+      "reliabilityScore": 8,
       "recommendation": "KEEP",
-      "notes": "7 שימושיים · 14 לא רלוונטיים · 21 טריים (30 ימים) · אמינות 7/10"
+      "notes": "18 שימושיים · 21 לא רלוונטיים · 39 טריים (30 ימים) · אמינות 8/10"
     },
     {
       "id": "infospot",
       "name": "Infospot",
       "scannedCount": 20,
-      "relevantArticles": 9,
+      "relevantArticles": 12,
       "usefulCount": 8,
-      "irrelevantCount": 11,
-      "freshCount": 15,
-      "relevanceScore": 5,
+      "irrelevantCount": 8,
+      "freshCount": 13,
+      "relevanceScore": 6,
       "reliabilityScore": 8,
       "recommendation": "KEEP",
-      "notes": "8 שימושיים · 11 לא רלוונטיים · 15 טריים (30 ימים) · אמינות 8/10"
+      "notes": "8 שימושיים · 8 לא רלוונטיים · 13 טריים (30 ימים) · אמינות 8/10"
     },
     {
       "id": "zavit",
       "name": "זווית – סוכנות ידיעות למדע ולסביבה",
       "scannedCount": 100,
-      "relevantArticles": 32,
-      "usefulCount": 5,
-      "irrelevantCount": 68,
-      "freshCount": 15,
+      "relevantArticles": 30,
+      "usefulCount": 4,
+      "irrelevantCount": 70,
+      "freshCount": 17,
       "relevanceScore": 3,
       "reliabilityScore": 6,
       "recommendation": "KEEP",
-      "notes": "5 שימושיים · 68 לא רלוונטיים · 15 טריים (30 ימים) · אמינות 6/10"
+      "notes": "4 שימושיים · 70 לא רלוונטיים · 17 טריים (30 ימים) · אמינות 6/10"
     },
     {
       "id": "isees",
@@ -240,7 +205,9 @@
     }
   ],
   "approval": {
-    "add": [],
+    "add": [
+      "shakuf.co.il"
+    ],
     "remove": [
       "isees"
     ]
