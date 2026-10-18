@@ -1389,6 +1389,202 @@
       "recommendation": "REMOVE",
       "approvalStatus": "pending",
       "notes": "המקור לא הגיב בהרצה זו (כשל איסוף)."
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "שקוף",
+      "url": "https://shakuf.co.il/",
+      "score": 9,
+      "recommendation": "ADD",
+      "approvalStatus": "pending",
+      "notes": "3/3 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 9/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "אנשים ומחשבים",
+      "url": "https://pc.co.il/",
+      "score": 8,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "הידברות",
+      "url": "https://hidabroot.org/",
+      "score": 8,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "Hayadan",
+      "url": "https://hayadan.org.il/",
+      "score": 8,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "YNET",
+      "url": "https://ynet.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "5/15 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "ice (אייס)",
+      "url": "https://ice.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/5 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "אמס",
+      "url": "https://emess.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/9 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "חדשות חיפה",
+      "url": "https://haipo.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "2/2 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "פתח תקוה עכשיו",
+      "url": "https://ptnow.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "אתר החדשות דבר",
+      "url": "https://davar1.co.il/",
+      "score": 6,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "calcalist",
+      "url": "https://calcalist.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/8 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "ביזפורטל",
+      "url": "https://bizportal.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/8 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "הארץ",
+      "url": "https://haaretz.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/4 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "היום",
+      "url": "https://israelhayom.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "3/24 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 5/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "וואלה",
+      "url": "https://walla.co.il/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/10 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "new",
+      "name": "Greenpeace",
+      "url": "https://greenpeace.org/",
+      "score": 5,
+      "recommendation": "OBSERVE",
+      "approvalStatus": "pending",
+      "notes": "1/4 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "existing",
+      "name": "Google News (חיפוש מילות מפתח)",
+      "score": 8,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "21 שימושיים · 34 לא רלוונטיים · 55 טריים (30 ימים) · אמינות 8/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "existing",
+      "name": "Infospot",
+      "score": 8,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "10 שימושיים · 8 לא רלוונטיים · 18 טריים (30 ימים) · אמינות 8/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "existing",
+      "name": "זווית – סוכנות ידיעות למדע ולסביבה",
+      "score": 6,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "2 שימושיים · 70 לא רלוונטיים · 12 טריים (30 ימים) · אמינות 6/10"
+    },
+    {
+      "date": "2026-10-18",
+      "kind": "existing",
+      "name": "מגזין אקולוגיה וסביבה (ISEES)",
+      "score": 1,
+      "recommendation": "REMOVE",
+      "approvalStatus": "pending",
+      "notes": "המקור לא הגיב בהרצה זו (כשל איסוף)."
     }
   ]
 }
