@@ -1585,6 +1585,42 @@
       "recommendation": "REMOVE",
       "approvalStatus": "pending",
       "notes": "המקור לא הגיב בהרצה זו (כשל איסוף)."
+    },
+    {
+      "date": "2026-10-25",
+      "kind": "existing",
+      "name": "Google News (חיפוש מילות מפתח)",
+      "score": 1,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "0 שימושיים · 0 לא רלוונטיים · 0 טריים (30 ימים) · אמינות 1/10"
+    },
+    {
+      "date": "2026-10-25",
+      "kind": "existing",
+      "name": "Infospot",
+      "score": 8,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "12 שימושיים · 7 לא רלוונטיים · 17 טריים (30 ימים) · אמינות 8/10"
+    },
+    {
+      "date": "2026-10-25",
+      "kind": "existing",
+      "name": "זווית – סוכנות ידיעות למדע ולסביבה",
+      "score": 6,
+      "recommendation": "KEEP",
+      "approvalStatus": "pending",
+      "notes": "3 שימושיים · 70 לא רלוונטיים · 12 טריים (30 ימים) · אמינות 6/10"
+    },
+    {
+      "date": "2026-10-25",
+      "kind": "existing",
+      "name": "מגזין אקולוגיה וסביבה (ISEES)",
+      "score": 1,
+      "recommendation": "REMOVE",
+      "approvalStatus": "pending",
+      "notes": "המקור לא הגיב בהרצה זו (כשל איסוף)."
     }
   ]
 }
