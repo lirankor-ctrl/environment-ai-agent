@@ -1,23 +1,6 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-08",
   "recommendedNew": [
-    {
-      "name": "מגזין מרחיב דעת, מעורר מחשבה",
-      "domain": "epoch.org.il",
-      "url": "https://epoch.org.il/",
-      "sampleUrl": "https://epoch.org.il/commercial/633787/",
-      "score": 9,
-      "totalCount": 3,
-      "relevantCount": 3,
-      "datedCount": 3,
-      "access": {
-        "rss": true,
-        "rssUrl": "https://epoch.org.il/feed",
-        "html": true
-      },
-      "verdict": "ADD",
-      "reason": "3/3 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 9/10"
-    },
     {
       "name": "רד סי אילת",
       "domain": "eilatredc.co.il",
@@ -34,42 +17,26 @@
       },
       "verdict": "ADD",
       "reason": "2/2 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
-    },
+    }
+  ],
+  "underObservation": [
     {
       "name": "שקוף",
       "domain": "shakuf.co.il",
       "url": "https://shakuf.co.il/",
-      "sampleUrl": "https://shakuf.co.il/64947",
+      "sampleUrl": "https://shakuf.co.il/65470",
       "score": 8,
-      "totalCount": 2,
-      "relevantCount": 2,
-      "datedCount": 2,
+      "totalCount": 1,
+      "relevantCount": 1,
+      "datedCount": 1,
       "access": {
         "rss": true,
         "rssUrl": "https://shakuf.co.il/feed",
         "html": false
       },
-      "verdict": "ADD",
-      "reason": "2/2 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
+      "verdict": "OBSERVE",
+      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
     },
-    {
-      "name": "כלכליסט",
-      "domain": "calcalist.co.il",
-      "url": "https://calcalist.co.il/",
-      "sampleUrl": "https://www.calcalist.co.il/article/s1pjps1smx",
-      "score": 7,
-      "totalCount": 4,
-      "relevantCount": 3,
-      "datedCount": 4,
-      "access": {
-        "rss": false,
-        "html": true
-      },
-      "verdict": "ADD",
-      "reason": "3/4 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 7/10"
-    }
-  ],
-  "underObservation": [
     {
       "name": "הידברות",
       "domain": "hidabroot.org",
@@ -88,37 +55,85 @@
       "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
     },
     {
-      "name": "NWS חדשות חיפה והסביבה",
-      "domain": "nws.report",
-      "url": "https://nws.report/",
-      "sampleUrl": "https://nws.report/economy/155451/",
+      "name": "Hayadan",
+      "domain": "hayadan.org.il",
+      "url": "https://hayadan.org.il/",
+      "sampleUrl": "https://www.hayadan.org.il/silman-environment-ministry-recycling-climate-part-1",
       "score": 8,
       "totalCount": 1,
       "relevantCount": 1,
       "datedCount": 1,
       "access": {
         "rss": true,
-        "rssUrl": "https://nws.report/feed",
+        "rssUrl": "https://hayadan.org.il/feed",
         "html": true
       },
       "verdict": "OBSERVE",
       "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · זמין דרך RSS · ציון 8/10"
     },
     {
-      "name": "YNET",
-      "domain": "ynet.co.il",
-      "url": "https://ynet.co.il/",
-      "sampleUrl": "https://www.ynet.co.il/environment-science/article/bj110rbaoze",
-      "score": 6,
-      "totalCount": 18,
-      "relevantCount": 5,
-      "datedCount": 18,
+      "name": "calcalist",
+      "domain": "calcalist.co.il",
+      "url": "https://calcalist.co.il/",
+      "sampleUrl": "https://www.calcalist.co.il/local_news/article/cl8ard22d",
+      "score": 7,
+      "totalCount": 1,
+      "relevantCount": 1,
+      "datedCount": 1,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "5/18 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 7/10"
+    },
+    {
+      "name": "את\"צ",
+      "domain": "idf.il",
+      "url": "https://idf.il/",
+      "sampleUrl": "https://www.idf.il/%D7%90%D7%AA%D7%A8%D7%99-%D7%99%D7%97%D7%99%D7%93%D7%95%D7%AA/%D7%91%D7%94-%D7%93-1/%D7%9B%D7%9C-%D7%94%D7%9B%D7%AA%D7%91%D7%95%D7%AA/2026/%D7%98%D7%A7%D7%A1-%D7%A1%D7%99%D7%95%D7%9D-%D7%A7%D7%95%D7%A8%D7%A1-%D7%A7%D7%A6%D7%99%D7%A0%D7%99%D7%9D-%D7%A7%D7%A8%D7%91%D7%99%D7%99%D7%9D-%D7%9E%D7%97%D7%96%D7%95%D7%A8-76/",
+      "score": 6,
+      "totalCount": 1,
+      "relevantCount": 1,
+      "datedCount": 1,
+      "access": {
+        "rss": false,
+        "html": false
+      },
+      "verdict": "OBSERVE",
+      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+    },
+    {
+      "name": "YNET",
+      "domain": "ynet.co.il",
+      "url": "https://ynet.co.il/",
+      "sampleUrl": "https://www.ynet.co.il/radio/hachibazman/article/omnyb4f500e8c667",
+      "score": 6,
+      "totalCount": 15,
+      "relevantCount": 4,
+      "datedCount": 15,
+      "access": {
+        "rss": false,
+        "html": true
+      },
+      "verdict": "OBSERVE",
+      "reason": "4/15 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
+    },
+    {
+      "name": "הארץ",
+      "domain": "haaretz.co.il",
+      "url": "https://haaretz.co.il/",
+      "sampleUrl": "https://www.haaretz.co.il/sport/basketball/2026-11-03/ty-article-magazine/.premium/000001a1-a0a3-de48-abb1-fde3d5220000",
+      "score": 6,
+      "totalCount": 6,
+      "relevantCount": 2,
+      "datedCount": 6,
+      "access": {
+        "rss": false,
+        "html": true
+      },
+      "verdict": "OBSERVE",
+      "reason": "2/6 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
     },
     {
       "name": "פתח תקוה עכשיו",
@@ -137,22 +152,6 @@
       "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
     },
     {
-      "name": "Greenpeace",
-      "domain": "greenpeace.org",
-      "url": "https://greenpeace.org/",
-      "sampleUrl": "https://www.greenpeace.org/israel/news/86649/%D7%A0%D7%99%D7%A1%D7%95%D7%99-%D7%A4%D7%A6%D7%9C%D7%99-%D7%94%D7%A9%D7%9E%D7%9F-%D7%97%D7%95%D7%96%D7%A8/",
-      "score": 6,
-      "totalCount": 5,
-      "relevantCount": 2,
-      "datedCount": 5,
-      "access": {
-        "rss": false,
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "2/5 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 6/10"
-    },
-    {
       "name": "אתר החדשות דבר",
       "domain": "davar1.co.il",
       "url": "https://davar1.co.il/",
@@ -169,20 +168,36 @@
       "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
     },
     {
-      "name": "Hayadan",
-      "domain": "hayadan.org.il",
-      "url": "https://hayadan.org.il/",
-      "sampleUrl": "https://www.hayadan.org.il/silman-environment-ministry-recycling-climate-part-1",
-      "score": 6,
-      "totalCount": 1,
+      "name": "TheMarker",
+      "domain": "themarker.com",
+      "url": "https://themarker.com/",
+      "sampleUrl": "https://www.themarker.com/markets/2026-10-12/ty-article/.premium/000001a1-305b-d7b2-a1a3-777b18860000",
+      "score": 5,
+      "totalCount": 4,
       "relevantCount": 1,
-      "datedCount": 1,
+      "datedCount": 4,
+      "access": {
+        "rss": false,
+        "html": true
+      },
+      "verdict": "OBSERVE",
+      "reason": "1/4 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+    },
+    {
+      "name": "היום",
+      "domain": "israelhayom.co.il",
+      "url": "https://israelhayom.co.il/",
+      "sampleUrl": "https://www.israelhayom.co.il/lifestyle/family-and-parenting/article/21599693",
+      "score": 5,
+      "totalCount": 6,
+      "relevantCount": 3,
+      "datedCount": 6,
       "access": {
         "rss": false,
         "html": false
       },
       "verdict": "OBSERVE",
-      "reason": "1/1 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 6/10"
+      "reason": "3/6 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 5/10"
     },
     {
       "name": "גלובס",
@@ -190,85 +205,53 @@
       "url": "https://globes.co.il/",
       "sampleUrl": "https://www.globes.co.il/news/article.aspx?did",
       "score": 5,
-      "totalCount": 5,
+      "totalCount": 7,
       "relevantCount": 1,
-      "datedCount": 5,
+      "datedCount": 7,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "1/5 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+      "reason": "1/7 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
     },
     {
-      "name": "ביזפורטל",
-      "domain": "bizportal.co.il",
-      "url": "https://bizportal.co.il/",
-      "sampleUrl": "https://www.bizportal.co.il/financialconsumerism/news/article/20044284",
+      "name": "Greenpeace",
+      "domain": "greenpeace.org",
+      "url": "https://greenpeace.org/",
+      "sampleUrl": "https://www.greenpeace.org/israel/news/86827/%D7%A2%D7%9C-%D7%94%D7%90%D7%99%D7%A8%D7%95%D7%95%D7%99%D7%96%D7%99%D7%95%D7%9F-%D7%99%D7%A9%D7%A8%D7%90%D7%9C-%D7%9C%D7%90-%D7%94%D7%99%D7%99%D7%AA%D7%94-%D7%9E%D7%95%D7%95%D7%AA%D7%A8%D7%AA-%D7%91/",
       "score": 5,
-      "totalCount": 12,
+      "totalCount": 3,
       "relevantCount": 1,
-      "datedCount": 12,
+      "datedCount": 3,
       "access": {
         "rss": false,
         "html": true
       },
       "verdict": "OBSERVE",
-      "reason": "1/12 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+      "reason": "1/3 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
     },
     {
-      "name": "היום",
-      "domain": "israelhayom.co.il",
-      "url": "https://israelhayom.co.il/",
-      "sampleUrl": "https://www.israelhayom.co.il/lifestyle/beauty/article/21670551",
-      "score": 5,
-      "totalCount": 19,
-      "relevantCount": 4,
-      "datedCount": 19,
+      "name": "מקור ראשון",
+      "domain": "makorrishon.co.il",
+      "url": "https://makorrishon.co.il/",
+      "sampleUrl": "https://www.makorrishon.co.il/news/defence/article/379558",
+      "score": 4,
+      "totalCount": 4,
+      "relevantCount": 1,
+      "datedCount": 4,
       "access": {
         "rss": false,
         "html": false
       },
       "verdict": "OBSERVE",
-      "reason": "4/19 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 5/10"
-    },
-    {
-      "name": "הארץ",
-      "domain": "haaretz.co.il",
-      "url": "https://haaretz.co.il/",
-      "sampleUrl": "https://www.haaretz.co.il/sport/basketball/2026-10-13/ty-article-magazine/.premium/000001a1-3623-d610-a5bb-373b62d30000",
-      "score": 5,
-      "totalCount": 2,
-      "relevantCount": 1,
-      "datedCount": 2,
-      "access": {
-        "rss": false,
-        "html": true
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/2 פריטים רלוונטיים ב-30 הימים האחרונים · נגיש לגריפת HTML · ציון 5/10"
+      "reason": "1/4 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
     },
     {
       "name": "זמן ישראל",
       "domain": "zman.co.il",
       "url": "https://zman.co.il/",
       "sampleUrl": "https://www.zman.co.il/731143/",
-      "score": 4,
-      "totalCount": 6,
-      "relevantCount": 1,
-      "datedCount": 6,
-      "access": {
-        "rss": false,
-        "html": false
-      },
-      "verdict": "OBSERVE",
-      "reason": "1/6 פריטים רלוונטיים ב-30 הימים האחרונים · נגישות מוגבלת · ציון 4/10"
-    },
-    {
-      "name": "חדשות חיפה",
-      "domain": "haipo.co.il",
-      "url": "https://haipo.co.il/",
-      "sampleUrl": "https://haipo.co.il/item/648240",
       "score": 4,
       "totalCount": 4,
       "relevantCount": 1,
@@ -285,41 +268,41 @@
     {
       "id": "google-news",
       "name": "Google News (חיפוש מילות מפתח)",
-      "scannedCount": 29,
-      "relevantArticles": 12,
-      "usefulCount": 12,
-      "irrelevantCount": 17,
-      "freshCount": 29,
+      "scannedCount": 20,
+      "relevantArticles": 7,
+      "usefulCount": 7,
+      "irrelevantCount": 13,
+      "freshCount": 20,
       "relevanceScore": 4,
-      "reliabilityScore": 8,
+      "reliabilityScore": 7,
       "recommendation": "KEEP",
-      "notes": "12 שימושיים · 17 לא רלוונטיים · 29 טריים (30 ימים) · אמינות 8/10"
+      "notes": "7 שימושיים · 13 לא רלוונטיים · 20 טריים (30 ימים) · אמינות 7/10"
     },
     {
       "id": "infospot",
       "name": "Infospot",
       "scannedCount": 20,
-      "relevantArticles": 14,
+      "relevantArticles": 15,
       "usefulCount": 14,
-      "irrelevantCount": 6,
-      "freshCount": 20,
-      "relevanceScore": 7,
+      "irrelevantCount": 5,
+      "freshCount": 19,
+      "relevanceScore": 8,
       "reliabilityScore": 9,
       "recommendation": "KEEP",
-      "notes": "14 שימושיים · 6 לא רלוונטיים · 20 טריים (30 ימים) · אמינות 9/10"
+      "notes": "14 שימושיים · 5 לא רלוונטיים · 19 טריים (30 ימים) · אמינות 9/10"
     },
     {
       "id": "zavit",
       "name": "זווית – סוכנות ידיעות למדע ולסביבה",
       "scannedCount": 100,
       "relevantArticles": 31,
-      "usefulCount": 7,
+      "usefulCount": 9,
       "irrelevantCount": 69,
-      "freshCount": 17,
+      "freshCount": 21,
       "relevanceScore": 3,
       "reliabilityScore": 6,
       "recommendation": "KEEP",
-      "notes": "7 שימושיים · 69 לא רלוונטיים · 17 טריים (30 ימים) · אמינות 6/10"
+      "notes": "9 שימושיים · 69 לא רלוונטיים · 21 טריים (30 ימים) · אמינות 6/10"
     },
     {
       "id": "isees",
@@ -337,10 +320,7 @@
   ],
   "approval": {
     "add": [
-      "epoch.org.il",
-      "eilatredc.co.il",
-      "shakuf.co.il",
-      "calcalist.co.il"
+      "eilatredc.co.il"
     ],
     "remove": [
       "isees"

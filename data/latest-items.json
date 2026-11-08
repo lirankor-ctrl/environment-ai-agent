@@ -1,5 +1,54 @@
 [
   {
+    "title": "אגף הביטחון במזכרת בתיה מסכם פעילות: קנסות והורדת משאית מהכביש בעקבות השלכת פסולת, ואיתור שוהה בלתי חוקי באתר בנייה",
+    "url": "https://www.be106.net/280/164225",
+    "source": "BE106 (Google News)",
+    "publishedAt": "2026-11-08T06:11:53.000Z",
+    "summary": "אגף הביטחון במזכרת בתיה מסכם פעילות: קנסות והורדת משאית מהכביש בעקבות השלכת פסולת, ואיתור שוהה בלתי חוקי באתר בנייה  BE106",
+    "query": "טיפול בפסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "High",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-11-08T11:06:42.927Z",
+    "imageUrl": "https://cdn.be106.net/p/NH7058e04a9dea6.jpg",
+    "imageSource": "og:image"
+  },
+  {
+    "title": "קנס של 1.13 מיליון שקל לדלק מנטה בגין זיהום אוויר בירושלים",
+    "url": "https://www.makorrishon.co.il/news/health/article/388010",
+    "source": "מקור ראשון (Google News)",
+    "publishedAt": "2026-11-02T11:34:08.000Z",
+    "summary": "קנס של 1.13 מיליון שקל לדלק מנטה בגין זיהום אוויר בירושלים  מקור ראשון",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "High",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-11-08T11:06:42.927Z"
+  },
+  {
+    "title": "זיהום, תחלואה וסכנה ביטחונית: בג\"ץ יכריע על גורל תחנת הכוח",
+    "url": "https://www.israelhayom.co.il/news/local/article/21759608",
+    "source": "היום (Google News)",
+    "publishedAt": "2026-11-02T11:18:21.000Z",
+    "summary": "זיהום, תחלואה וסכנה ביטחונית: בג\"ץ יכריע על גורל תחנת הכוח  היום",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "High",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-11-08T11:06:42.927Z"
+  },
+  {
     "title": "כמעט מחצית מהפסולת בישראל מגיעה לאפעה – והמטמנה קורסת",
     "url": "https://www.ynet.co.il/environment-science/article/hkrkn9qpmx",
     "source": "YNET (Google News)",
@@ -103,78 +152,20 @@
     "fetchedAt": "2026-10-11T10:39:52.875Z"
   },
   {
-    "title": "צעד חריג: ביהמ\"ש ביטל הרשעה פלילית של מנהל באתר פסולת",
-    "url": "https://infospot.co.il/n/manager_conviction_canceled",
-    "source": "Infospot",
-    "publishedAt": "2026-10-07T00:00:00.000Z",
-    "summary": "הנאשם, לוחם שייטת 13 בעברו, שימש מנהל עבודה באתר לטיפול פסולת בחדרה שפעל בלי רישיון עסק ושבוצעו בו שורה של עבירות סביבתיות. בית המשפט החליט שלא להרשיע את המנהל, למרות התנגדות יחידת להב 433 של משטרת ישראל",
+    "title": "איך יראו בעתיד היערות בישראל?",
+    "url": "https://www.zavit.org.il/%d7%90%d7%99%d7%9a-%d7%99%d7%a8%d7%90%d7%95-%d7%91%d7%a2%d7%aa%d7%99%d7%93-%d7%94%d7%99%d7%a2%d7%a8%d7%95%d7%aa-%d7%91%d7%99%d7%a9%d7%a8%d7%90%d7%9c/",
+    "source": "זווית – סוכנות ידיעות למדע ולסביבה",
+    "publishedAt": "2026-11-05T17:35:18.000Z",
+    "summary": "שינוי האקלים צפוי, בין היתר, לשנות את התנאים שבהם גדלים העצים ביערות בישראל. מחקר חדש בחן אילו מיני עצים מצליחים לתפקד בטמפרטורות גבוהות, כיצד הם מתמודדים עם מחסור במים – ומה אפשר ללמוד מכך על נטיעות עתידיות ..",
     "matchedKeywords": [
-      "פסולת"
+      "מחקר"
     ],
     "categories": [
-      "ניהול פסולת"
+      "מחקרים ופיתוח"
     ],
-    "importance": "High",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-11T10:39:53.504Z",
-    "imageUrl": "https://infospot.co.il/Content/UserFiles/Upload/333344444.png",
-    "imageSource": "article-img"
-  },
-  {
-    "title": "המצלמות תיעדו, הקנסות נרשמו: 84 מקרים של השלכת פסולת בניין באשקלון",
-    "url": "https://www.news08.net/%D7%94%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%AA%D7%99%D7%A2%D7%93%D7%95-%D7%94%D7%A7%D7%A0%D7%A1%D7%95%D7%AA-%D7%A0%D7%A8%D7%A9%D7%9E%D7%95-84-%D7%9E%D7%A7%D7%A8%D7%99%D7%9D-%D7%A9%D7%9C-%D7%94/",
-    "source": "חדשות אפס שמונה (Google News)",
-    "publishedAt": "2026-10-06T18:13:33.000Z",
-    "summary": "המצלמות תיעדו, הקנסות נרשמו: 84 מקרים של השלכת פסולת בניין באשקלון  חדשות אפס שמונה",
-    "query": "פסולת בניין ישראל",
-    "matchedKeywords": [
-      "פסולת",
-      "פסולת בניין"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "High",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-11T10:39:52.875Z",
-    "imageUrl": "https://www.news08.net/wp-content/uploads/2026/10/%D7%94%D7%AA%D7%99%D7%A2%D7%95%D7%93-%D7%9E%D7%AA%D7%95%D7%9A-%D7%9E%D7%A2%D7%A8%D7%9A-%D7%94%D7%9E%D7%A6%D7%9C%D7%9E%D7%95%D7%AA-%D7%94%D7%A2%D7%99%D7%A8%D7%95%D7%A0%D7%99-%D7%A2%D7%99%D7%A8%D7%99%D7%99%D7%AA-%D7%90%D7%A9%D7%A7%D7%9C%D7%95%D7%9F-6.jpeg",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "הממשלה מצהירה שתפחית את זיהום האוויר באשדוד - אך מקדמת תחנת כוח נוספת באזור",
-    "url": "https://www.calcalist.co.il/local_news/article/byeom4figg",
-    "source": "calcalist (Google News)",
-    "publishedAt": "2026-10-06T08:49:00.000Z",
-    "summary": "הממשלה מצהירה שתפחית את זיהום האוויר באשדוד - אך מקדמת תחנת כוח נוספת באזור  calcalist",
-    "query": "מפעל מחזור ישראל",
-    "matchedKeywords": [],
-    "categories": [
-      "קיימות"
-    ],
-    "importance": "High",
+    "importance": "Medium",
     "relevanceTier": "secondary",
-    "fetchedAt": "2026-10-11T10:39:52.875Z",
-    "imageUrl": "https://pic1.calcalist.co.il/picserver3/crop_images/2024/06/25/Hkx1YvO80/Hkx1YvO80_1_118_1733_976_0_large.jpg",
-    "imageSource": "og:image"
-  },
-  {
-    "title": "422 אלף טונות פסולת ונזק של מיליארדים: \"הערבים שורפים ואנחנו משלמים\"",
-    "url": "https://www.ice.co.il/realestate/news/article/1132481",
-    "source": "ice (אייס) (Google News)",
-    "publishedAt": "2026-10-06T08:12:00.000Z",
-    "summary": "422 אלף טונות פסולת ונזק של מיליארדים: \"הערבים שורפים ואנחנו משלמים\"  ice (אייס)",
-    "query": "פסולת אלקטרונית ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "High",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-11T10:39:52.875Z",
-    "imageUrl": "https://img.ice.co.il/giflib/news/1041061026.pjg.png",
-    "imageSource": "og:image"
+    "fetchedAt": "2026-11-08T11:06:47.226Z"
   },
   {
     "title": "חיות את הרגע: פרפר דרומי הצלף",
@@ -207,6 +198,95 @@
     "importance": "Medium",
     "relevanceTier": "weak",
     "fetchedAt": "2026-11-01T11:05:41.947Z"
+  },
+  {
+    "title": "איך למנוע הצפות בדרך טבעית?",
+    "url": "https://www.zavit.org.il/%d7%90%d7%99%d7%9a-%d7%9c%d7%9e%d7%a0%d7%95%d7%a2-%d7%94%d7%a6%d7%a4%d7%95%d7%aa-%d7%91%d7%93%d7%a8%d7%9a-%d7%98%d7%91%d7%a2%d7%99%d7%aa/",
+    "source": "זווית – סוכנות ידיעות למדע ולסביבה",
+    "publishedAt": "2026-11-08T09:42:38.000Z",
+    "summary": "ככל שאירועי הגשם הקיצוניים נעשים תכופים יותר, המערכות הטבעיות שמסוגלות לווסת שיטפונות דווקא מצטמצמות. במקום להסתמך רק על פתרונות הנדסיים, על ישראל להכיר בבתי גידול אקווטיים כתשתית חיונית להסתגלות לשינוי האקלים. דעה ..",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "weak",
+    "fetchedAt": "2026-11-08T11:06:47.226Z"
+  },
+  {
+    "title": "בשיאו של משבר הריחות בראשון: תחנת הניטור הציגה נתוני בנזן שגויים, המשרד להגנת הסביבה ידע ושתק",
+    "url": "https://shakuf.co.il/65470",
+    "source": "שקוף (Google News)",
+    "publishedAt": "2026-11-05T19:58:07.000Z",
+    "summary": "בשיאו של משבר הריחות בראשון: תחנת הניטור הציגה נתוני בנזן שגויים, המשרד להגנת הסביבה ידע ושתק  שקוף",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-11-08T11:06:42.927Z"
+  },
+  {
+    "title": "\"ישראל בדרך למשבר פסולת חסר תקדים\"",
+    "url": "https://www.calcalist.co.il/conferences/article/rkkyscytze",
+    "source": "Calcalist (Google News)",
+    "publishedAt": "2026-11-05T10:49:00.000Z",
+    "summary": "\"ישראל בדרך למשבר פסולת חסר תקדים\"  Calcalist",
+    "query": "הטמנה פסולת ישראל",
+    "matchedKeywords": [
+      "פסולת"
+    ],
+    "categories": [
+      "ניהול פסולת"
+    ],
+    "importance": "Low",
+    "relevanceTier": "strong",
+    "fetchedAt": "2026-11-08T11:06:42.927Z"
+  },
+  {
+    "title": "זיהום השפכים בגדה נותן השראה למי שמבקשים לבטל את השפעת הרשות הפלסטינית",
+    "url": "https://www.haaretz.co.il/opinions/zafrir/2026-11-04/ty-article-opinion/.premium/000001a1-a67c-d2e9-a5ad-befed4020000",
+    "source": "הארץ (Google News)",
+    "publishedAt": "2026-11-04T18:00:00.000Z",
+    "summary": "זיהום השפכים בגדה נותן השראה למי שמבקשים לבטל את השפעת הרשות הפלסטינית  הארץ",
+    "query": "זיהום סביבתי ישראל",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-11-08T11:06:42.927Z"
+  },
+  {
+    "title": "עיצום כספי של יותר מ־1.13 מיליון ₪ לתחנת דלק",
+    "url": "https://infospot.co.il/n/gas_station_million_shekel_fine",
+    "source": "Infospot",
+    "publishedAt": "2026-11-04T00:00:00.000Z",
+    "summary": "המשרד להגנת הסביבה הטיל את העיצום הכספי בגלל שורה של ליקויים שנמצאו בתחנת דלק בירושלים, בהם היעדר תיעוד של נתוני הניטור הרציף של מערכת מישוב אדי הדלק",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "secondary",
+    "fetchedAt": "2026-11-08T11:06:43.794Z"
+  },
+  {
+    "title": "אחרי כעשור: ישראל אשררה את תיקון קיגאלי לפרוטוקול מונטריאול",
+    "url": "https://infospot.co.il/n/kigali_amendment_refrigerants",
+    "source": "Infospot",
+    "publishedAt": "2026-11-02T00:00:00.000Z",
+    "summary": "ישראל השלימה את ההיערכות הנדרשת, ואשררה את האמנה הבינלאומית שמטרתה לצמצם את השימוש בגזי קירור מסוג HFC כיוון שהם מגבירים את שינוי האקלים. ההתחייבות העיקרית: צמצום הייבוא ב-85% עד 2036",
+    "matchedKeywords": [],
+    "categories": [
+      "קיימות"
+    ],
+    "importance": "Low",
+    "relevanceTier": "weak",
+    "fetchedAt": "2026-11-08T11:06:43.794Z"
   },
   {
     "title": "מרכז מיחזור בסטנדרטים בינלאומיים ומרכז מבקרים ארצי יוקמו באילת. הונחה אבן הפינה להקמת מרכז מבקרים והסברה ראשון מסוגו בישראל, באזור התעשייה שחורת,",
@@ -436,25 +516,6 @@
     "fetchedAt": "2026-10-18T08:40:45.488Z"
   },
   {
-    "title": "המשרד להגנת הסביבה בתקופת סילמן: שיעור המיחזור ירד, יותר פסולת נקברה באדמה וההיערכות לאקלים דשדשה",
-    "url": "https://www.hayadan.org.il/silman-environment-ministry-recycling-climate-part-1",
-    "source": "Hayadan (Google News)",
-    "publishedAt": "2026-10-13T10:30:23.000Z",
-    "summary": "המשרד להגנת הסביבה בתקופת סילמן: שיעור המיחזור ירד, יותר פסולת נקברה באדמה וההיערכות לאקלים דשדשה  Hayadan",
-    "query": "מיחזור פסולת ישראל",
-    "matchedKeywords": [
-      "מיחזור",
-      "פסולת"
-    ],
-    "categories": [
-      "מחזור",
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-18T08:40:45.488Z"
-  },
-  {
     "title": "אומנות מיחזור המשכנתא ומשא ומתן מנצח | פרק #17 \"המבוגר האחראי\"",
     "url": "https://youtu.be/VUL7IyDsaPA?si",
     "source": "YouTube (Google News)",
@@ -500,102 +561,5 @@
     "importance": "Low",
     "relevanceTier": "secondary",
     "fetchedAt": "2026-10-18T08:40:45.489Z"
-  },
-  {
-    "title": "100 הימים הראשונים: כך נציל את הסביבה והטבע בישראל",
-    "url": "https://shakuf.co.il/64947",
-    "source": "שקוף (Google News)",
-    "publishedAt": "2026-10-08T10:11:27.000Z",
-    "summary": "100 הימים הראשונים: כך נציל את הסביבה והטבע בישראל  שקוף",
-    "query": "כלכלה מעגלית ישראל",
-    "matchedKeywords": [],
-    "categories": [
-      "קיימות"
-    ],
-    "importance": "Low",
-    "relevanceTier": "weak",
-    "fetchedAt": "2026-10-11T10:39:52.875Z"
-  },
-  {
-    "title": "4,700 מקרי מוות בשנה: שריפות הפסולת חונקות את ישראל",
-    "url": "https://www.israelhayom.co.il/news/local/article/21574630",
-    "source": "היום (Google News)",
-    "publishedAt": "2026-10-07T14:11:52.000Z",
-    "summary": "4,700 מקרי מוות בשנה: שריפות הפסולת חונקות את ישראל  היום",
-    "query": "פסולת בניין ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-11T10:39:52.875Z"
-  },
-  {
-    "title": "שריפה בעספיא - עדות למשבר פינוי הפסולת ביישובים הערביים והדרוזיים",
-    "url": "https://www.haaretz.co.il/nature/2026-10-07/ty-article/.premium/000001a1-1543-d0f2-a5fd-5f7b71ca0000",
-    "source": "הארץ (Google News)",
-    "publishedAt": "2026-10-07T09:31:00.000Z",
-    "summary": "שריפה בעספיא - עדות למשבר פינוי הפסולת ביישובים הערביים והדרוזיים  הארץ",
-    "query": "הטמנה פסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-11T10:39:52.875Z"
-  },
-  {
-    "title": "מפת המחנק של ישראל: כ-23,000 דיווחים על שריפות פסולת ברחבי הארץ - חי פה",
-    "url": "https://haipo.co.il/item/648271",
-    "source": "חדשות חיפה (Google News)",
-    "publishedAt": "2026-10-06T11:09:55.000Z",
-    "summary": "מפת המחנק של ישראל: כ-23,000 דיווחים על שריפות פסולת ברחבי הארץ  חי פה - חדשות חיפה",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-11T10:39:52.875Z"
-  },
-  {
-    "title": "אחרי 13 שנה: המשרד להגנ\"ס יפסיק לפרסם את מדד ההשפעה הסביבתית",
-    "url": "https://infospot.co.il/n/environmental_impact_index1",
-    "source": "Infospot",
-    "publishedAt": "2026-10-05T00:00:00.000Z",
-    "summary": "המדד דירג חברות לפי מידת הסיכון הסביבתי שלהן. לאורך השנים ספג המדד ביקורת שעסקה בעיקר ברלוונטיות ובעדכניות שלו",
-    "matchedKeywords": [],
-    "categories": [
-      "קיימות"
-    ],
-    "importance": "Low",
-    "relevanceTier": "secondary",
-    "fetchedAt": "2026-10-11T10:39:53.504Z"
-  },
-  {
-    "title": "שריפה גדולה באתר פסולת בעספיא: 20 צוותי כיבוי פועלים במקום",
-    "url": "https://www.israelhayom.co.il/israelnow/article/21543328?amp",
-    "source": "היום (Google News)",
-    "publishedAt": "2026-10-03T19:43:25.000Z",
-    "summary": "שריפה גדולה באתר פסולת בעספיא: 20 צוותי כיבוי פועלים במקום  היום",
-    "query": "טיפול בפסולת ישראל",
-    "matchedKeywords": [
-      "פסולת"
-    ],
-    "categories": [
-      "ניהול פסולת"
-    ],
-    "importance": "Low",
-    "relevanceTier": "strong",
-    "fetchedAt": "2026-10-04T10:27:21.751Z"
   }
 ]
